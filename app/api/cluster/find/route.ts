@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { store, LAMBDA_ID } from "@/lib/store";
 import { findCluster } from "@/lib/agent2";
 import { propose, proposalToEvent } from "@/lib/agent3";
 
@@ -9,6 +9,10 @@ const MAX_ACTIVE_CLUSTERS_PER_USER = 3;
 export async function POST(req: Request) {
   const userId = await getSessionUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
+
+  console.log(
+    `[cluster/find] lambda=${LAMBDA_ID} storeUsers=${store.users.size} storeClusters=${store.clusters.size} forUser=${userId}`,
+  );
 
   const seedUser = store.users.get(userId);
   if (!seedUser) return NextResponse.json({ error: "User not found." }, { status: 404 });
@@ -53,6 +57,9 @@ export async function POST(req: Request) {
   }
 
   store.clusters.set(cluster.id, cluster);
+  console.log(
+    `[cluster/find] lambda=${LAMBDA_ID} afterWrite storeClusters=${store.clusters.size} newClusterId=${cluster.id}`,
+  );
   // We intentionally don't flip in_active_cluster — it's legacy. Active-cluster membership is
   // derived from store.clusters now.
 

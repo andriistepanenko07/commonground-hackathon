@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { store, LAMBDA_ID } from "@/lib/store";
 import EventCard from "@/components/EventCard";
 import AgentNotice from "@/components/AgentNotice";
 import FindAnotherGroupCard from "@/components/FindAnotherGroupCard";
@@ -20,6 +20,10 @@ export default async function EventsPage() {
   const myClusters = [...store.clusters.values()].filter((c) => c.member_ids.includes(userId));
   const myClusterIds = new Set(myClusters.map((c) => c.id));
   const myEvents = [...store.events.values()].filter((e) => myClusterIds.has(e.cluster_id));
+
+  console.log(
+    `[events] lambda=${LAMBDA_ID} storeUsers=${store.users.size} storeClusters=${store.clusters.size} storeEvents=${store.events.size} forUser=${userId} myClusters=${myClusters.length} myEvents=${myEvents.length}`,
+  );
   const activeClusterCount = myClusters.filter((c) => c.status !== "dissolved").length;
 
   const toConfirm = myEvents.filter((e) => e.status === "proposed");

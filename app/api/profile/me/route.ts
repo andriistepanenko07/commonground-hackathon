@@ -1,11 +1,14 @@
 import { NextResponse } from "next/server";
 import { clearSession, getSessionUserId } from "@/lib/session";
-import { store, updateUser } from "@/lib/store";
+import { store, updateUser, LAMBDA_ID } from "@/lib/store";
 import type { AvailabilitySlot, DayPart, LifeStage, Status, WhatBroughtYouHere, City } from "@/lib/types";
 
 export async function GET() {
   const userId = await getSessionUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
+  console.log(
+    `[profile/me] lambda=${LAMBDA_ID} storeUsers=${store.users.size} storeClusters=${store.clusters.size} forUser=${userId}`,
+  );
   const user = store.users.get(userId);
   if (!user) {
     // Stale session — cookie points at a user no longer in the in-memory store after a

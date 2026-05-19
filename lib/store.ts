@@ -57,6 +57,18 @@ function init(): Store {
 // Avoid reloading seed in dev-mode hot reloads.
 export const store: Store = globalThis.__cg_store ?? (globalThis.__cg_store = init());
 
+// Diagnostic: a random ID stamped per Lambda instance at module init. Identical IDs across
+// requests = same warm Lambda (state shared). Different IDs = different Lambdas (state split).
+// Temporary — remove once the Vercel split-state issue is diagnosed.
+export const LAMBDA_ID =
+  globalThis.__cg_lambda_id ??
+  (globalThis.__cg_lambda_id = Math.random().toString(36).slice(2, 8));
+
+declare global {
+  // eslint-disable-next-line no-var
+  var __cg_lambda_id: string | undefined;
+}
+
 // --- User helpers ---
 
 export function findUserByEmail(email: string): User | undefined {

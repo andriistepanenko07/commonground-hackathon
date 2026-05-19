@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { store, LAMBDA_ID } from "@/lib/store";
 import { toSafeMember } from "@/lib/types";
 import { ClusterPreview } from "@/components/ClusterPreview";
 import FindGroupButton from "@/components/FindGroupButton";
@@ -20,6 +20,10 @@ export default async function NowPage() {
 
   const clusters = [...store.clusters.values()].filter(
     (c) => c.member_ids.includes(userId) && c.status !== "dissolved",
+  );
+
+  console.log(
+    `[now] lambda=${LAMBDA_ID} storeUsers=${store.users.size} storeClusters=${store.clusters.size} forUser=${userId} myClusters=${clusters.length}`,
   );
 
   if (clusters.length === 0) {
