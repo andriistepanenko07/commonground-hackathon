@@ -39,7 +39,9 @@ export default function FollowupPicker({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ to_user_id: id, via_event_id: eventId }),
       });
-      router.refresh();
+      // Parent page is a client component (see app/events/[id]/followup/page.tsx) so reload
+      // is what gets the updated mutual/picked status to render.
+      window.location.reload();
     } finally {
       setPending(null);
     }

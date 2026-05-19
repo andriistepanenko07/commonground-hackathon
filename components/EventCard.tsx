@@ -61,10 +61,9 @@ export default function EventCard({
         setPending(null);
         return;
       }
-      router.refresh();
-      // router.refresh() re-fetches the server data but doesn't unmount this client component,
-      // so the local `pending` state has to be cleared explicitly or every button stays disabled.
-      setPending(null);
+      // /events is a client component (see app/(app)/events/page.tsx) so router.refresh()
+      // doesn't re-run its data fetch. Full reload remounts the page and re-fetches /api/events-data.
+      window.location.reload();
     } catch {
       setError("Network error.");
       setPending(null);

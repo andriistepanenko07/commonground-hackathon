@@ -1,35 +1,70 @@
-import { redirect, notFound } from "next/navigation";
-import { HeartHandshake } from "lucide-react";
-import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+"use client";
+
+// Client component that fetches /api/event/[id]/followup-data. See /now and /events for the
+// same reasoning — keeps reads in the API-route Lambda pool.
+
+import { useEffect, useState } from "react";
+import { useRouter, useParams, notFound } from "next/navigation";
+import { HeartHandshake, Loader2 } from "lucide-react";
 import FollowupPicker from "./FollowupPicker";
 import AgentNotice from "@/components/AgentNotice";
 
-export const dynamic = "force-dynamic";
+interface FollowupData {
+  eventActivity: string;
+  others: { id: string; display_name: string }[];
+  pickedIds: string[];
+  mutualIds: string[];
+}
 
-export default async function FollowupPage({ params }: { params: Promise<{ id: string }> }) {
-  const userId = await getSessionUserId();
-  if (!userId) redirect("/login");
-  const { id } = await params;
-  const event = store.events.get(id);
-  if (!event) notFound();
-  const cluster = store.clusters.get(event.cluster_id);
-  if (!cluster || !cluster.member_ids.includes(userId)) notFound();
+export default function FollowupPage() {
+  const router = useRouter();
+  const params = useParams<{ id: string }>();
+  const id = params?.id;
+  const [data, setData] = useState<FollowupData | null>(null);
+  const [missing, setMissing] = useState(false);
 
-  const others = cluster.member_ids
-    .filter((mid) => mid !== userId)
-    .map((mid) => store.users.get(mid))
-    .filter((u): u is NonNullable<typeof u> => !!u);
+  useEffect(() => {
+    if (!id) return;
+    let cancelled = false;
+    async function load() {
+      try {
+        const res = await fetch(`/api/event/${id}/followup-data`, { cache: "no-store" });
+        if (cancelled) return;
+        if (res.status === 401) {
+          router.replace("/login");
+          return;
+        }
+        if (res.status === 404) {
+          setMissing(true);
+          return;
+        }
+        if (!res.ok) {
+          setMissing(true);
+          return;
+        }
+        const d = (await res.json()) as FollowupData;
+        if (!cancelled) setData(d);
+      } catch {
+        if (!cancelled) setMissing(true);
+      }
+    }
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [id, router]);
 
-  const pickedIds = store.contacts
-    .filter((c) => c.from_user_id === userId && c.via_event_id === id)
-    .map((c) => c.to_user_id);
-  const pickedBackIds = new Set(
-    store.contacts
-      .filter((c) => c.to_user_id === userId && c.via_event_id === id)
-      .map((c) => c.from_user_id),
-  );
-  const mutualIds = pickedIds.filter((oid) => pickedBackIds.has(oid));
+  if (missing) notFound();
+
+  if (!data || !id) {
+    return (
+      <div className="app-shell">
+        <main className="flex-1 grid place-items-center">
+          <Loader2 className="h-6 w-6 text-accent animate-spin" />
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="app-shell">
@@ -47,10 +82,10 @@ export default async function FollowupPage({ params }: { params: Promise<{ id: s
 
         <FollowupPicker
           eventId={id}
-          eventActivity={event.activity}
-          others={others.map((o) => ({ id: o.id, display_name: o.display_name }))}
-          pickedIds={pickedIds}
-          mutualIds={mutualIds}
+          eventActivity={data.eventActivity}
+          others={data.others}
+          pickedIds={data.pickedIds}
+          mutualIds={data.mutualIds}
         />
 
         <AgentNotice className="text-center mt-8" />

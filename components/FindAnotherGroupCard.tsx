@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Loader2, Sparkles } from "lucide-react";
 
 const MAX = 3;
@@ -13,7 +12,6 @@ export default function FindAnotherGroupCard({
   interests: string[];
   activeClusterCount: number;
 }) {
-  const router = useRouter();
   const [picked, setPicked] = useState<Set<string>>(new Set());
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,8 +41,8 @@ export default function FindAnotherGroupCard({
         setPending(false);
         return;
       }
-      router.push("/now");
-      router.refresh();
+      // Force a full navigation+reload so /now (a client component) re-fetches /api/now-data.
+      window.location.assign("/now");
     } catch {
       setError("Could not reach the matching service.");
       setPending(false);

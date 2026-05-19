@@ -1,36 +1,76 @@
-import { redirect } from "next/navigation";
-import { ArrowRight, HeartHandshake } from "lucide-react";
-import { getSessionUserId } from "@/lib/session";
-import { store, LAMBDA_ID } from "@/lib/store";
+"use client";
+
+// Client component that fetches /api/events-data. Same reasoning as /now: keeps the read
+// inside the API-route Lambda pool where mutations also happen.
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ArrowRight, HeartHandshake, Loader2 } from "lucide-react";
+import type { Event } from "@/lib/types";
 import EventCard from "@/components/EventCard";
 import AgentNotice from "@/components/AgentNotice";
 import FindAnotherGroupCard from "@/components/FindAnotherGroupCard";
-import Link from "next/link";
 
-export const dynamic = "force-dynamic";
+interface EventsData {
+  userId: string;
+  interests: string[];
+  activeClusterCount: number;
+  toConfirm: Event[];
+  upcoming: Event[];
+  past: Event[];
+}
 
-export default async function EventsPage() {
-  const userId = await getSessionUserId();
-  if (!userId) redirect("/login");
-  const user = store.users.get(userId);
-  if (!user) redirect("/login");
-  if (!user.profile_complete) redirect("/onboarding/chat");
+export default function EventsPage() {
+  const router = useRouter();
+  const [data, setData] = useState<EventsData | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  // Find every event tied to a cluster this user belongs to.
-  const myClusters = [...store.clusters.values()].filter((c) => c.member_ids.includes(userId));
-  const myClusterIds = new Set(myClusters.map((c) => c.id));
-  const myEvents = [...store.events.values()].filter((e) => myClusterIds.has(e.cluster_id));
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      try {
+        const res = await fetch("/api/events-data", { cache: "no-store" });
+        if (cancelled) return;
+        if (res.status === 401 || res.status === 409) {
+          const d = await res.json().catch(() => ({}));
+          router.replace(d.redirect ?? "/login");
+          return;
+        }
+        if (!res.ok) {
+          setError("Couldn't load your events. Try again in a moment.");
+          return;
+        }
+        const d = (await res.json()) as EventsData;
+        if (!cancelled) setData(d);
+      } catch {
+        if (!cancelled) setError("Network error — try again in a moment.");
+      }
+    }
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [router]);
 
-  console.log(
-    `[events] lambda=${LAMBDA_ID} storeUsers=${store.users.size} storeClusters=${store.clusters.size} storeEvents=${store.events.size} forUser=${userId} myClusters=${myClusters.length} myEvents=${myEvents.length}`,
-  );
-  const activeClusterCount = myClusters.filter((c) => c.status !== "dissolved").length;
+  if (error) {
+    return (
+      <div className="px-5 pt-6 pb-8 text-center text-sm text-ink-soft">{error}</div>
+    );
+  }
 
-  const toConfirm = myEvents.filter((e) => e.status === "proposed");
-  const upcoming = myEvents.filter((e) => e.status === "fired");
-  const past = myEvents.filter((e) => e.status === "completed");
+  if (!data) {
+    return (
+      <div className="grid place-items-center py-20">
+        <Loader2 className="h-6 w-6 text-accent animate-spin" />
+      </div>
+    );
+  }
 
-  if (myEvents.length === 0) {
+  const { userId, interests, activeClusterCount, toConfirm, upcoming, past } = data;
+  const totalEvents = toConfirm.length + upcoming.length + past.length;
+
+  if (totalEvents === 0) {
     return (
       <div className="px-5 pt-6 pb-8 space-y-8">
         <div>
@@ -51,7 +91,7 @@ export default async function EventsPage() {
 
         {activeClusterCount > 0 && (
           <FindAnotherGroupCard
-            interests={user.interests}
+            interests={interests}
             activeClusterCount={activeClusterCount}
           />
         )}
@@ -118,7 +158,7 @@ export default async function EventsPage() {
       {activeClusterCount > 0 && (
         <section>
           <FindAnotherGroupCard
-            interests={user.interests}
+            interests={interests}
             activeClusterCount={activeClusterCount}
           />
         </section>

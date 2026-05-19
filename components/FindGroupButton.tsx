@@ -1,11 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Loader2, Sparkles } from "lucide-react";
 
 export default function FindGroupButton() {
-  const router = useRouter();
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,7 +18,9 @@ export default function FindGroupButton() {
         setPending(false);
         return;
       }
-      router.refresh();
+      // /now is a client component (see app/(app)/now/page.tsx) so router.refresh() doesn't
+      // re-run its data fetch. A full reload remounts the component and re-fetches /api/now-data.
+      window.location.reload();
     } catch {
       setError("Could not reach the matching service.");
       setPending(false);
