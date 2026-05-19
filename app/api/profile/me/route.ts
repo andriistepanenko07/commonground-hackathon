@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import { clearSession, getSessionUserId } from "@/lib/session";
-import { getUserById, updateUser } from "@/lib/store";
+import { store, updateUser } from "@/lib/store";
 import type { AvailabilitySlot, DayPart, LifeStage, Status, WhatBroughtYouHere, City } from "@/lib/types";
 
 export async function GET() {
   const userId = await getSessionUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
-  const user = await getUserById(userId);
+  const user = store.users.get(userId);
   if (!user) {
     // Stale session — cookie points at a user no longer in the in-memory store after a
     // dev-server restart. Clear the cookie now so the next request is a clean 401 rather
@@ -59,12 +59,12 @@ function asAvailability(v: unknown): AvailabilitySlot[] {
 export async function PATCH(req: Request) {
   const userId = await getSessionUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
-  const user = await getUserById(userId);
+  const user = store.users.get(userId);
   if (!user) return NextResponse.json({ error: "User not found." }, { status: 404 });
 
   const body = await req.json().catch(() => ({}));
 
-  const next = await updateUser(userId, {
+  const next = updateUser(userId, {
     display_name: typeof body.display_name === "string" ? body.display_name.trim() : user.display_name,
     status: asEnum(STATUSES, body.status, user.status),
     life_stage: asEnum(LIFE_STAGES, body.life_stage, user.life_stage),

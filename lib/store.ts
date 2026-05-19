@@ -1,7 +1,7 @@
-// Redis-backed store. Async API: every dynamic record (users, clusters, events, contacts,
-// onboarding, passwords) lives in Upstash so every serverless instance sees the same state.
-// Venues and cityEvents are static seed data — kept in memory. See lib/redis.ts.
+// Single mutable store for the running demo. Lives in module scope on the server.
+// State resets on dev-server restart — fine for a 2-min pitch (CLAUDE.md §14).
 
+import seedUsers from "@/seed/users.json";
 import seedVenues from "@/seed/venues.json";
 import seedCityEvents from "@/seed/city-events.json";
 import type {
@@ -14,82 +14,60 @@ import type {
   PartialUser,
 } from "./types";
 import type { MessageParam } from "@anthropic-ai/sdk/resources/messages";
-import { redis, ensureSeeded } from "./redis";
 
-// Per-user onboarding state held in Redis during the Agent 1 chat.
-export interface OnboardingState {
+// Per-user onboarding state held in memory during the Agent 1 chat.
+interface OnboardingState {
   history: MessageParam[];
   partial: PartialUser;
 }
 
-// --- Static seed data (read-only, no Redis) ---
+interface Store {
+  users: Map<string, User>;
+  passwords: Map<string, string>;
+  venues: Venue[];
+  cityEvents: CityEvent[];
+  clusters: Map<string, Cluster>;
+  events: Map<string, Event>;
+  contacts: Contact[];
+  onboarding: Map<string, OnboardingState>;
+}
 
-export const venues: Venue[] = seedVenues as Venue[];
-export const cityEvents: CityEvent[] = seedCityEvents as CityEvent[];
+declare global {
+  // eslint-disable-next-line no-var
+  var __cg_store: Store | undefined;
+}
 
-// --- Redis hash names ---
-
-const USERS = "cg:users";
-const CLUSTERS = "cg:clusters";
-const EVENTS = "cg:events";
-const ONBOARDING = "cg:onboarding";
-const PASSWORDS = "cg:passwords"; // field = email lowercased
-const CONTACTS = "cg:contacts";   // single key holding JSON array
-
-// Upstash auto-parses JSON when it can; we still defensively handle both cases.
-function parse<T>(raw: unknown): T | undefined {
-  if (raw == null) return undefined;
-  if (typeof raw === "string") {
-    try {
-      return JSON.parse(raw) as T;
-    } catch {
-      return undefined;
-    }
+function init(): Store {
+  const users = new Map<string, User>();
+  for (const u of seedUsers as User[]) {
+    users.set(u.id, u);
   }
-  return raw as T;
+  return {
+    users,
+    passwords: new Map(),
+    venues: seedVenues as Venue[],
+    cityEvents: seedCityEvents as CityEvent[],
+    clusters: new Map(),
+    events: new Map(),
+    contacts: [],
+    onboarding: new Map(),
+  };
 }
 
-function parseAll<T>(map: Record<string, unknown> | null): T[] {
-  if (!map) return [];
-  const out: T[] = [];
-  for (const v of Object.values(map)) {
-    const p = parse<T>(v);
-    if (p) out.push(p);
-  }
-  return out;
-}
+// Avoid reloading seed in dev-mode hot reloads.
+export const store: Store = globalThis.__cg_store ?? (globalThis.__cg_store = init());
 
-// --- Users ---
+// --- User helpers ---
 
-export async function getUserById(id: string): Promise<User | undefined> {
-  await ensureSeeded();
-  const raw = await redis.hget(USERS, id);
-  return parse<User>(raw);
-}
-
-export async function allUsers(): Promise<User[]> {
-  await ensureSeeded();
-  const map = await redis.hgetall<Record<string, unknown>>(USERS);
-  return parseAll<User>(map);
-}
-
-export async function setUser(user: User): Promise<void> {
-  await ensureSeeded();
-  await redis.hset(USERS, { [user.id]: JSON.stringify(user) });
-}
-
-export async function deleteUser(id: string): Promise<void> {
-  await ensureSeeded();
-  await redis.hdel(USERS, id);
-}
-
-export async function findUserByEmail(email: string): Promise<User | undefined> {
+export function findUserByEmail(email: string): User | undefined {
   const lower = email.trim().toLowerCase();
-  const all = await allUsers();
-  return all.find((u) => u.email.toLowerCase() === lower);
+  for (const u of store.users.values()) {
+    if (u.email.toLowerCase() === lower) return u;
+  }
+  return undefined;
 }
 
-export async function createNewUser(email: string, password: string): Promise<User> {
+export function createNewUser(email: string, password: string): User {
   const id = `u-new-${Math.random().toString(36).slice(2, 8)}`;
   const user: User = {
     id,
@@ -106,113 +84,30 @@ export async function createNewUser(email: string, password: string): Promise<Us
     profile_complete: false,
     in_active_cluster: false,
   };
-  await setUser(user);
-  await setPasswordByEmail(email, password);
+  store.users.set(id, user);
+  store.passwords.set(id, password);
   return user;
 }
 
-export async function updateUser(id: string, patch: Partial<User>): Promise<User | undefined> {
-  const u = await getUserById(id);
+export function updateUser(id: string, patch: Partial<User>): User | undefined {
+  const u = store.users.get(id);
   if (!u) return undefined;
   const next = { ...u, ...patch };
-  await setUser(next);
+  store.users.set(id, next);
   return next;
 }
 
-// --- Passwords (keyed by email, lowercased) ---
+// --- Onboarding helpers ---
 
-export async function getPasswordByEmail(email: string): Promise<string | undefined> {
-  await ensureSeeded();
-  const raw = await redis.hget(PASSWORDS, email.trim().toLowerCase());
-  if (typeof raw === "string") return raw;
-  return undefined;
+export function getOnboarding(userId: string): OnboardingState {
+  let state = store.onboarding.get(userId);
+  if (!state) {
+    state = { history: [], partial: {} };
+    store.onboarding.set(userId, state);
+  }
+  return state;
 }
 
-export async function setPasswordByEmail(email: string, password: string): Promise<void> {
-  await ensureSeeded();
-  await redis.hset(PASSWORDS, { [email.trim().toLowerCase()]: password });
-}
-
-export async function deletePasswordByEmail(email: string): Promise<void> {
-  await ensureSeeded();
-  await redis.hdel(PASSWORDS, email.trim().toLowerCase());
-}
-
-// --- Clusters ---
-
-export async function getCluster(id: string): Promise<Cluster | undefined> {
-  await ensureSeeded();
-  const raw = await redis.hget(CLUSTERS, id);
-  return parse<Cluster>(raw);
-}
-
-export async function allClusters(): Promise<Cluster[]> {
-  await ensureSeeded();
-  const map = await redis.hgetall<Record<string, unknown>>(CLUSTERS);
-  return parseAll<Cluster>(map);
-}
-
-export async function setCluster(cluster: Cluster): Promise<void> {
-  await ensureSeeded();
-  await redis.hset(CLUSTERS, { [cluster.id]: JSON.stringify(cluster) });
-}
-
-export async function deleteCluster(id: string): Promise<void> {
-  await ensureSeeded();
-  await redis.hdel(CLUSTERS, id);
-}
-
-// --- Events ---
-
-export async function getEvent(id: string): Promise<Event | undefined> {
-  await ensureSeeded();
-  const raw = await redis.hget(EVENTS, id);
-  return parse<Event>(raw);
-}
-
-export async function allEvents(): Promise<Event[]> {
-  await ensureSeeded();
-  const map = await redis.hgetall<Record<string, unknown>>(EVENTS);
-  return parseAll<Event>(map);
-}
-
-export async function setEvent(event: Event): Promise<void> {
-  await ensureSeeded();
-  await redis.hset(EVENTS, { [event.id]: JSON.stringify(event) });
-}
-
-export async function deleteEvent(id: string): Promise<void> {
-  await ensureSeeded();
-  await redis.hdel(EVENTS, id);
-}
-
-// --- Onboarding (per-user chat history + partial profile during Agent 1) ---
-
-export async function getOnboarding(userId: string): Promise<OnboardingState> {
-  await ensureSeeded();
-  const raw = await redis.hget(ONBOARDING, userId);
-  return parse<OnboardingState>(raw) ?? { history: [], partial: {} };
-}
-
-export async function setOnboarding(userId: string, state: OnboardingState): Promise<void> {
-  await ensureSeeded();
-  await redis.hset(ONBOARDING, { [userId]: JSON.stringify(state) });
-}
-
-export async function deleteOnboarding(userId: string): Promise<void> {
-  await ensureSeeded();
-  await redis.hdel(ONBOARDING, userId);
-}
-
-// --- Contacts (single JSON-encoded array — small list, read-modify-write is fine) ---
-
-export async function allContacts(): Promise<Contact[]> {
-  await ensureSeeded();
-  const raw = await redis.get(CONTACTS);
-  return parse<Contact[]>(raw) ?? [];
-}
-
-export async function setContacts(list: Contact[]): Promise<void> {
-  await ensureSeeded();
-  await redis.set(CONTACTS, JSON.stringify(list));
+export function setOnboarding(userId: string, state: OnboardingState): void {
+  store.onboarding.set(userId, state);
 }

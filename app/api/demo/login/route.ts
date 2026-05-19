@@ -2,39 +2,31 @@
 // when the live API is unavailable or speed matters. CLAUDE.md §16, §17.
 
 import { NextResponse } from "next/server";
-import {
-  getUserById,
-  setUser,
-  allClusters,
-  allEvents,
-  deleteCluster,
-  deleteEvent,
-} from "@/lib/store";
+import { store } from "@/lib/store";
 import { setSession } from "@/lib/session";
 
 const DEMO_USER_ID = "u-r-pw-01"; // Maya — see seed-data.md
 
 export async function POST() {
-  const user = await getUserById(DEMO_USER_ID);
+  const user = store.users.get(DEMO_USER_ID);
   if (!user) return NextResponse.json({ error: "Demo user not seeded." }, { status: 500 });
   // Reset any active-cluster flag so the demo always starts cleanly.
   user.in_active_cluster = false;
-  await setUser(user);
+  store.users.set(user.id, user);
   // Dissolve any prior cluster they were part of so we get a fresh path through Now → forming → active.
-  const [clusters, events] = await Promise.all([allClusters(), allEvents()]);
-  for (const c of clusters) {
+  for (const c of [...store.clusters.values()]) {
     if (c.member_ids.includes(user.id)) {
       for (const mid of c.member_ids) {
-        const m = await getUserById(mid);
+        const m = store.users.get(mid);
         if (m) {
           m.in_active_cluster = false;
-          await setUser(m);
+          store.users.set(mid, m);
         }
       }
-      await deleteCluster(c.id);
+      store.clusters.delete(c.id);
       // Drop any events tied to the dissolved cluster too.
-      for (const ev of events) {
-        if (ev.cluster_id === c.id) await deleteEvent(ev.id);
+      for (const [eid, ev] of store.events) {
+        if (ev.cluster_id === c.id) store.events.delete(eid);
       }
     }
   }

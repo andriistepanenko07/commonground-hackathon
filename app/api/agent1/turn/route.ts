@@ -17,7 +17,7 @@ export async function POST(req: Request) {
   const userMessage =
     typeof rawMessage === "string" && rawMessage.trim().length > 0 ? rawMessage.trim() : null;
 
-  const state = await getOnboarding(userId);
+  const state = getOnboarding(userId);
 
   // Anthropic's API requires messages.length >= 1 and the first message to be from the user.
   // On the very first turn (empty history, no real user input yet) we inject a synthetic
@@ -50,10 +50,10 @@ export async function POST(req: Request) {
   }
   nextHistory.push({ role: "assistant", content: assistantText });
 
-  await setOnboarding(userId, { history: nextHistory, partial: nextPartial });
+  setOnboarding(userId, { history: nextHistory, partial: nextPartial });
 
   // Mirror into the live user record so it's editable on the summary screen.
-  await updateUser(userId, {
+  updateUser(userId, {
     display_name: nextPartial.display_name ?? "",
     status: nextPartial.status ?? "newcomer",
     life_stage: nextPartial.life_stage ?? "early-career",

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSessionUserId } from "@/lib/session";
-import { getEvent, setEvent } from "@/lib/store";
+import { store } from "@/lib/store";
 
 const MAX_TIME_OPTIONS = 3;
 
@@ -9,7 +9,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
 
   const { id } = await ctx.params;
-  const event = await getEvent(id);
+  const event = store.events.get(id);
   if (!event) return NextResponse.json({ error: "Event not found." }, { status: 404 });
   if (event.status !== "proposed") {
     return NextResponse.json({ error: "Event is no longer open." }, { status: 409 });
@@ -33,6 +33,6 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   }
   event.declined = event.declined.filter((u) => u !== userId);
 
-  await setEvent(event);
+  store.events.set(id, event);
   return NextResponse.json({ ok: true, event });
 }

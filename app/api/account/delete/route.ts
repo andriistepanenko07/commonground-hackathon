@@ -1,52 +1,32 @@
 import { NextResponse } from "next/server";
-import {
-  getUserById,
-  deleteUser,
-  deletePasswordByEmail,
-  deleteOnboarding,
-  allClusters,
-  setCluster,
-  setUser,
-  allContacts,
-  setContacts,
-} from "@/lib/store";
+import { store } from "@/lib/store";
 import { clearSession, getSessionUserId } from "@/lib/session";
 
 export async function POST() {
   const userId = await getSessionUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
-
-  const user = await getUserById(userId);
-  await deleteUser(userId);
-  if (user) await deletePasswordByEmail(user.email);
-  await deleteOnboarding(userId);
-
+  store.users.delete(userId);
+  store.passwords.delete(userId);
+  store.onboarding.delete(userId);
   // Remove the user from any cluster they're in.
-  const clusters = await allClusters();
-  for (const c of clusters) {
+  for (const c of [...store.clusters.values()]) {
     if (c.member_ids.includes(userId)) {
       c.member_ids = c.member_ids.filter((id) => id !== userId);
       if (c.member_ids.length < 3) {
         // Cluster is no longer viable — dissolve and free remaining members.
         for (const mid of c.member_ids) {
-          const m = await getUserById(mid);
+          const m = store.users.get(mid);
           if (m) {
             m.in_active_cluster = false;
-            await setUser(m);
+            store.users.set(mid, m);
           }
         }
         c.status = "dissolved";
       }
-      await setCluster(c);
+      store.clusters.set(c.id, c);
     }
   }
-
-  const contacts = await allContacts();
-  const nextContacts = contacts.filter(
-    (c) => c.from_user_id !== userId && c.to_user_id !== userId,
-  );
-  if (nextContacts.length !== contacts.length) await setContacts(nextContacts);
-
+  store.contacts = store.contacts.filter((c) => c.from_user_id !== userId && c.to_user_id !== userId);
   await clearSession();
   return NextResponse.json({ ok: true, redirect: "/" });
 }
