@@ -19,14 +19,23 @@ export async function POST(req: Request) {
 
   const state = getOnboarding(userId);
 
-  const turn = await runTurn(state.history, userMessage, state.partial);
+  // Anthropic's API requires messages.length >= 1 and the first message to be from the user.
+  // On the very first turn (empty history, no real user input yet) we inject a synthetic
+  // kickoff message so the model produces a fresh opener. The UI keeps its own bubble state
+  // so this never renders to the user.
+  const isKickoff = state.history.length === 0 && !userMessage;
+  const effectiveUserMessage = isKickoff
+    ? "[Start the interview with your opener.]"
+    : userMessage;
+
+  const turn = await runTurn(state.history, effectiveUserMessage, state.partial);
   const nextPartial = mergePatch(state.partial, turn.profile_patch);
 
   // Server is the source of truth for "interview is over": ignore the model's `done` claim
   // unless the actual extracted partial satisfies isComplete(), OR we've hit the soft cap
   // of 15 user turns.
   const nextHistory = [...state.history];
-  if (userMessage) nextHistory.push({ role: "user", content: userMessage });
+  if (effectiveUserMessage) nextHistory.push({ role: "user", content: effectiveUserMessage });
   const userTurnCount = nextHistory.filter((m) => m.role === "user").length;
   const done = isComplete(nextPartial) || userTurnCount >= 15;
 
