@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Common Ground — visual direction mockups</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Direction A — Warm Muted (neighbourhood café) */
+    .dir-a { background: #F4ECE0; }
+    .dir-a .phone { background: #FBF6EE; }
+    .dir-a h1, .dir-a h2, .dir-a h3 { font-family: 'Fraunces', serif; letter-spacing: -0.01em; }
+    .dir-a .body { font-family: 'Inter', sans-serif; }
+    .dir-a .accent { background: #B85A3B; color: #FBF6EE; }
+    .dir-a .accent-soft { background: #E8C9B8; color: #6E2E18; }
+    .dir-a .ink { color: #3D2A1F; }
+    .dir-a .ink-soft { color: #7A5E50; }
+    .dir-a .card { background: #FFFCF6; border: 1px solid #EADFD0; }
+    .dir-a .chip { background: #EADFD0; color: #6E4A36; }
+
+    /* Direction B — Clean Dutch Civic (trustworthy municipal) */
+    .dir-b { background: #EEF1F5; }
+    .dir-b .phone { background: #FFFFFF; }
+    .dir-b h1, .dir-b h2, .dir-b h3, .dir-b .body { font-family: 'Inter', sans-serif; letter-spacing: -0.011em; }
+    .dir-b .accent { background: #1B4F8A; color: #FFFFFF; }
+    .dir-b .accent-soft { background: #DCE7F4; color: #1B4F8A; }
+    .dir-b .ink { color: #0F1E2E; }
+    .dir-b .ink-soft { color: #5B6B7C; }
+    .dir-b .card { background: #FFFFFF; border: 1px solid #DDE3EB; }
+    .dir-b .chip { background: #EDF1F6; color: #34495E; }
+
+    /* Direction C — Bold Optimistic (modern social app) */
+    .dir-c { background: #ECF7EF; }
+    .dir-c .phone { background: #FFFFFF; }
+    .dir-c h1, .dir-c h2, .dir-c h3, .dir-c .body { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.015em; }
+    .dir-c .accent { background: #FF6F61; color: #FFFFFF; }
+    .dir-c .accent-soft { background: #FFE2DE; color: #B83B2D; }
+    .dir-c .ink { color: #1B2A2F; }
+    .dir-c .ink-soft { color: #61777E; }
+    .dir-c .card { background: #FFFFFF; border: 1px solid #E5EEEA; }
+    .dir-c .chip { background: #E7F4EC; color: #2F6A47; }
+
+    .phone {
+      width: 375px;
+      min-height: 720px;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(15,30,46,0.12), 0 4px 10px rgba(15,30,46,0.06);
+      overflow: hidden;
+    }
+
+    .agent-notice {
+      font-size: 11px;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen">
+  <header class="px-8 py-6 max-w-[1280px] mx-auto">
+    <h1 class="text-2xl font-semibold text-slate-900 tracking-tight" style="font-family:'Inter',sans-serif">Common Ground — visual direction mockups</h1>
+    <p class="text-slate-600 mt-1" style="font-family:'Inter',sans-serif">Three directions, side by side. Each column shows the <em>Now</em> tab on top and the load-bearing <em>Event card</em> below, both at 375 px (iPhone width).</p>
+  </header>
+
+  <section class="flex flex-wrap gap-6 justify-center px-6 pb-16">
+    <!-- ============================================ -->
+    <!-- DIRECTION A — Warm Muted -->
+    <!-- ============================================ -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="text-center">
+        <div class="text-[11px] uppercase tracking-widest text-slate-500" style="font-family:'Inter',sans-serif">Direction A</div>
+        <div class="text-lg font-semibold text-slate-900 mt-1" style="font-family:'Fraunces',serif">Warm muted — neighbourhood café</div>
+        <div class="text-sm text-slate-600 mt-1" style="font-family:'Inter',sans-serif">Serif headings, terracotta accent, cream backgrounds. Human, hand-made.</div>
+      </div>
+
+      <!-- A: Now tab -->
+      <div class="phone dir-a flex flex-col">
+        <div class="px-5 pt-5 pb-3 body ink">
+          <div class="flex items-center justify-between text-xs ink-soft">
+            <span>9:41</span>
+            <span>Common Ground</span>
+          </div>
+          <h2 class="text-3xl mt-5">Your group is forming.</h2>
+          <p class="ink-soft mt-2 text-sm">Five people in Rotterdam who like <span class="ink">long walks, photography, slow coffee</span>.</p>
+        </div>
+        <div class="px-5 mt-4">
+          <div class="card rounded-2xl p-5">
+            <div class="flex -space-x-2 mb-4">
+              <div class="w-10 h-10 rounded-full bg-[#D9B89C] border-2 border-[#FBF6EE] flex items-center justify-center text-sm font-semibold text-[#6E2E18]">A</div>
+              <div class="w-10 h-10 rounded-full bg-[#C9A98D] border-2 border-[#FBF6EE] flex items-center justify-center text-sm font-semibold text-[#6E2E18]">T</div>
+              <div class="w-10 h-10 rounded-full bg-[#B89379] border-2 border-[#FBF6EE] flex items-center justify-center text-sm font-semibold text-[#FBF6EE]">M</div>
+              <div class="w-10 h-10 rounded-full bg-[#A98367] border-2 border-[#FBF6EE] flex items-center justify-center text-sm font-semibold text-[#FBF6EE]">J</div>
+              <div class="w-10 h-10 rounded-full bg-[#8E6A52] border-2 border-[#FBF6EE] flex items-center justify-center text-sm font-semibold text-[#FBF6EE]">L</div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="chip text-xs px-2.5 py-1 rounded-full">long walks</span>
+              <span class="chip text-xs px-2.5 py-1 rounded-full">photography</span>
+              <span class="chip text-xs px-2.5 py-1 rounded-full">slow coffee</span>
+            </div>
+            <p class="text-sm ink-soft italic">An AI agent is preparing a meetup proposal for you…</p>
+          </div>
+        </div>
+        <div class="px-5 mt-auto pb-6">
+          <div class="agent-notice ink-soft text-center">You're talking to an AI agent.</div>
+          <div class="mt-3 grid grid-cols-3 gap-1 text-center text-[11px] body">
+            <div class="py-3 ink font-semibold border-t-2 border-[#B85A3B]">Now</div>
+            <div class="py-3 ink-soft border-t border-transparent">Events</div>
+            <div class="py-3 ink-soft border-t border-transparent">Profile</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A: Event card -->
+      <div class="phone dir-a flex flex-col">
+        <div class="px-5 pt-5 pb-3 body ink">
+          <div class="flex items-center justify-between text-xs ink-soft">
+            <span>To confirm</span>
+            <span class="chip px-2 py-0.5 rounded-full">from Rotterdam cultural calendar</span>
+          </div>
+          <h2 class="text-3xl mt-3">Pavilion lights walk</h2>
+          <p class="ink-soft mt-1 text-sm">Het Park · meeting at the east gate</p>
+        </div>
+        <div class="px-5 mt-4 space-y-3">
+          <div class="card rounded-2xl p-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold ink">Friday, 22 May</div>
+              <div class="text-xs ink-soft">19:30 · 2 of 3 confirmed</div>
+            </div>
+            <button class="accent text-xs px-4 py-2 rounded-full font-semibold">I'm in</button>
+          </div>
+          <div class="card rounded-2xl p-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold ink">Saturday, 23 May</div>
+              <div class="text-xs ink-soft">11:00 · 1 confirmed</div>
+            </div>
+            <button class="accent-soft text-xs px-4 py-2 rounded-full font-semibold">I'm in</button>
+          </div>
+          <div class="card rounded-2xl p-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold ink">Sunday, 24 May</div>
+              <div class="text-xs ink-soft">16:00 · waiting for first confirmation</div>
+            </div>
+            <button class="accent-soft text-xs px-4 py-2 rounded-full font-semibold">I'm in</button>
+          </div>
+        </div>
+        <div class="px-5 mt-5 flex gap-2">
+          <button class="flex-1 text-xs py-2.5 rounded-full ink border border-[#EADFD0] body">Can't make it</button>
+          <button class="flex-1 text-xs py-2.5 rounded-full ink border border-[#EADFD0] body opacity-50">Suggest another time</button>
+        </div>
+        <div class="px-5 mt-auto pb-6">
+          <div class="agent-notice ink-soft text-center mt-6">First time to reach 3 confirmations locks the event.</div>
+          <div class="mt-3 grid grid-cols-3 gap-1 text-center text-[11px] body">
+            <div class="py-3 ink-soft">Now</div>
+            <div class="py-3 ink font-semibold border-t-2 border-[#B85A3B]">Events</div>
+            <div class="py-3 ink-soft">Profile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DIRECTION B — Clean Dutch Civic -->
+    <!-- ============================================ -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="text-center">
+        <div class="text-[11px] uppercase tracking-widest text-slate-500" style="font-family:'Inter',sans-serif">Direction B</div>
+        <div class="text-lg font-semibold text-slate-900 mt-1" style="font-family:'Inter',sans-serif">Clean Dutch civic — trustworthy municipal</div>
+        <div class="text-sm text-slate-600 mt-1" style="font-family:'Inter',sans-serif">Inter, deep blue, white cards with thin borders. Calm, official.</div>
+      </div>
+
+      <!-- B: Now tab -->
+      <div class="phone dir-b flex flex-col">
+        <div class="px-5 pt-5 pb-3 body ink">
+          <div class="flex items-center justify-between text-xs ink-soft">
+            <span>9:41</span>
+            <span class="font-semibold">Common Ground</span>
+          </div>
+          <h2 class="text-2xl font-semibold mt-5 tracking-tight">Your group is forming</h2>
+          <p class="ink-soft mt-1.5 text-sm">Five people in Rotterdam who share long walks, photography, slow coffee.</p>
+        </div>
+        <div class="px-5 mt-5">
+          <div class="card rounded-xl p-5">
+            <div class="flex -space-x-2 mb-4">
+              <div class="w-10 h-10 rounded-full bg-[#1B4F8A] border-2 border-white flex items-center justify-center text-sm font-semibold text-white">A</div>
+              <div class="w-10 h-10 rounded-full bg-[#2D6BAF] border-2 border-white flex items-center justify-center text-sm font-semibold text-white">T</div>
+              <div class="w-10 h-10 rounded-full bg-[#4A86C5] border-2 border-white flex items-center justify-center text-sm font-semibold text-white">M</div>
+              <div class="w-10 h-10 rounded-full bg-[#6AA0D4] border-2 border-white flex items-center justify-center text-sm font-semibold text-white">J</div>
+              <div class="w-10 h-10 rounded-full bg-[#8BB8E0] border-2 border-white flex items-center justify-center text-sm font-semibold text-white">L</div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="chip text-xs px-2.5 py-1 rounded">long walks</span>
+              <span class="chip text-xs px-2.5 py-1 rounded">photography</span>
+              <span class="chip text-xs px-2.5 py-1 rounded">slow coffee</span>
+            </div>
+            <p class="text-sm ink-soft">An AI agent is preparing a meetup proposal for you.</p>
+          </div>
+        </div>
+        <div class="px-5 mt-auto pb-6">
+          <div class="agent-notice ink-soft text-center">You're talking to an AI agent.</div>
+          <div class="mt-3 grid grid-cols-3 gap-1 text-center text-[11px] body border-t border-slate-200 pt-3">
+            <div class="ink font-semibold">Now</div>
+            <div class="ink-soft">Events</div>
+            <div class="ink-soft">Profile</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B: Event card -->
+      <div class="phone dir-b flex flex-col">
+        <div class="px-5 pt-5 pb-3 body ink">
+          <div class="flex items-center justify-between text-xs ink-soft">
+            <span class="uppercase tracking-wider font-semibold">To confirm</span>
+            <span class="chip px-2 py-0.5 rounded">Rotterdam cultural calendar</span>
+          </div>
+          <h2 class="text-2xl font-semibold mt-3 tracking-tight">Pavilion lights walk</h2>
+          <p class="ink-soft mt-1 text-sm">Het Park — meeting at the east gate</p>
+        </div>
+        <div class="px-5 mt-4 space-y-2.5">
+          <div class="card rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold ink">Friday, 22 May · 19:30</div>
+              <div class="text-xs ink-soft mt-0.5">2 of 3 confirmed</div>
+            </div>
+            <button class="accent text-xs px-4 py-2 rounded font-semibold">I'm in</button>
+          </div>
+          <div class="card rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold ink">Saturday, 23 May · 11:00</div>
+              <div class="text-xs ink-soft mt-0.5">1 confirmed</div>
+            </div>
+            <button class="accent-soft text-xs px-4 py-2 rounded font-semibold">I'm in</button>
+          </div>
+          <div class="card rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold ink">Sunday, 24 May · 16:00</div>
+              <div class="text-xs ink-soft mt-0.5">Waiting for first confirmation</div>
+            </div>
+            <button class="accent-soft text-xs px-4 py-2 rounded font-semibold">I'm in</button>
+          </div>
+        </div>
+        <div class="px-5 mt-5 flex gap-2">
+          <button class="flex-1 text-xs py-2.5 rounded ink border border-slate-300 body">Can't make it</button>
+          <button class="flex-1 text-xs py-2.5 rounded ink border border-slate-300 body opacity-60">Suggest another time</button>
+        </div>
+        <div class="px-5 mt-auto pb-6">
+          <div class="agent-notice ink-soft text-center mt-6">First time to reach 3 confirmations locks the event.</div>
+          <div class="mt-3 grid grid-cols-3 gap-1 text-center text-[11px] body border-t border-slate-200 pt-3">
+            <div class="ink-soft">Now</div>
+            <div class="ink font-semibold">Events</div>
+            <div class="ink-soft">Profile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- DIRECTION C — Bold Optimistic -->
+    <!-- ============================================ -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="text-center">
+        <div class="text-[11px] uppercase tracking-widest text-slate-500" style="font-family:'Inter',sans-serif">Direction C</div>
+        <div class="text-lg font-semibold text-slate-900 mt-1" style="font-family:'Plus Jakarta Sans',sans-serif">Bold optimistic — modern social app</div>
+        <div class="text-sm text-slate-600 mt-1" style="font-family:'Inter',sans-serif">Rounded sans, coral accent, generous radii. Contemporary, upbeat.</div>
+      </div>
+
+      <!-- C: Now tab -->
+      <div class="phone dir-c flex flex-col">
+        <div class="px-5 pt-5 pb-3 body ink">
+          <div class="flex items-center justify-between text-xs ink-soft">
+            <span>9:41</span>
+            <span class="font-bold">common ground</span>
+          </div>
+          <div class="mt-5 inline-block accent-soft text-[11px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Forming</div>
+          <h2 class="text-[28px] font-bold mt-3 leading-tight">A group is coming together for you.</h2>
+          <p class="ink-soft mt-2 text-sm">Five people in Rotterdam who share long walks, photography, and slow coffee.</p>
+        </div>
+        <div class="px-5 mt-5">
+          <div class="card rounded-3xl p-5 shadow-sm">
+            <div class="flex -space-x-3 mb-5">
+              <div class="w-11 h-11 rounded-full bg-[#FF6F61] border-2 border-white flex items-center justify-center text-sm font-bold text-white">A</div>
+              <div class="w-11 h-11 rounded-full bg-[#FF9776] border-2 border-white flex items-center justify-center text-sm font-bold text-white">T</div>
+              <div class="w-11 h-11 rounded-full bg-[#FFB991] border-2 border-white flex items-center justify-center text-sm font-bold text-white">M</div>
+              <div class="w-11 h-11 rounded-full bg-[#7BC9A5] border-2 border-white flex items-center justify-center text-sm font-bold text-white">J</div>
+              <div class="w-11 h-11 rounded-full bg-[#4A9B7E] border-2 border-white flex items-center justify-center text-sm font-bold text-white">L</div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="chip text-xs px-3 py-1 rounded-full font-medium">long walks</span>
+              <span class="chip text-xs px-3 py-1 rounded-full font-medium">photography</span>
+              <span class="chip text-xs px-3 py-1 rounded-full font-medium">slow coffee</span>
+            </div>
+            <p class="text-sm ink-soft">An AI agent is preparing a meetup proposal for you.</p>
+          </div>
+        </div>
+        <div class="px-5 mt-auto pb-6">
+          <div class="agent-notice ink-soft text-center">You're talking to an AI agent.</div>
+          <div class="mt-3 grid grid-cols-3 gap-1 text-center text-[11px] body">
+            <div class="py-2 px-3 ink font-bold accent-soft rounded-full">Now</div>
+            <div class="py-2 ink-soft">Events</div>
+            <div class="py-2 ink-soft">Profile</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- C: Event card -->
+      <div class="phone dir-c flex flex-col">
+        <div class="px-5 pt-5 pb-3 body ink">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold ink-soft uppercase tracking-wider">To confirm</span>
+            <span class="chip px-3 py-1 rounded-full text-[11px] font-semibold">Rotterdam calendar</span>
+          </div>
+          <h2 class="text-[28px] font-bold mt-3 leading-tight">Pavilion lights walk</h2>
+          <p class="ink-soft mt-1 text-sm">Het Park · meet at the east gate</p>
+        </div>
+        <div class="px-5 mt-4 space-y-3">
+          <div class="card rounded-2xl p-4 flex items-center justify-between shadow-sm">
+            <div>
+              <div class="text-sm font-bold ink">Fri 22 May · 19:30</div>
+              <div class="text-xs ink-soft mt-0.5">2 of 3 confirmed</div>
+            </div>
+            <button class="accent text-xs px-4 py-2 rounded-full font-bold">I'm in</button>
+          </div>
+          <div class="card rounded-2xl p-4 flex items-center justify-between shadow-sm">
+            <div>
+              <div class="text-sm font-bold ink">Sat 23 May · 11:00</div>
+              <div class="text-xs ink-soft mt-0.5">1 confirmed</div>
+            </div>
+            <button class="accent-soft text-xs px-4 py-2 rounded-full font-bold">I'm in</button>
+          </div>
+          <div class="card rounded-2xl p-4 flex items-center justify-between shadow-sm">
+            <div>
+              <div class="text-sm font-bold ink">Sun 24 May · 16:00</div>
+              <div class="text-xs ink-soft mt-0.5">Waiting for first confirmation</div>
+            </div>
+            <button class="accent-soft text-xs px-4 py-2 rounded-full font-bold">I'm in</button>
+          </div>
+        </div>
+        <div class="px-5 mt-5 flex gap-2">
+          <button class="flex-1 text-xs py-3 rounded-full ink border-2 border-[#E5EEEA] body font-semibold">Can't make it</button>
+          <button class="flex-1 text-xs py-3 rounded-full ink border-2 border-[#E5EEEA] body font-semibold opacity-60">Suggest another time</button>
+        </div>
+        <div class="px-5 mt-auto pb-6">
+          <div class="agent-notice ink-soft text-center mt-6">First time to reach 3 confirmations locks the event.</div>
+          <div class="mt-3 grid grid-cols-3 gap-1 text-center text-[11px] body">
+            <div class="py-2 ink-soft">Now</div>
+            <div class="py-2 px-3 ink font-bold accent-soft rounded-full">Events</div>
+            <div class="py-2 ink-soft">Profile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-slate-500 text-sm pb-10" style="font-family:'Inter',sans-serif">
+    Pick a direction. The chosen palette and type pairing will lock into <code>globals.css</code> for the rest of the build.
+  </footer>
+</body>
+</html>

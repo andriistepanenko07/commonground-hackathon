@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Warm civic — keep the blue trust signal, warm everything around it. */
+@theme {
+  --color-canvas: #f4ecde;
+  --color-surface: #fbf6ee;
+  --color-accent: #1b4f8a;
+  --color-accent-strong: #163f6e;
+  --color-accent-soft: #dce3f0;
+  --color-ink: #2e2620;
+  --color-ink-soft: #6e5f50;
+  --color-border-soft: #e4d8c5;
+  --color-chip-bg: #eee3d0;
+  --color-chip-text: #5c4a38;
+  --color-positive: #2f7a55;
+  --color-positive-soft: #dceadd;
+  --color-warning: #b76b00;
+  --color-warning-soft: #fbe7c8;
+  --color-danger: #a8323d;
+  --color-danger-soft: #f4d9cf;
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --letter-spacing-tight: -0.011em;
+
+  /* Soft warm drop shadow used everywhere a card would otherwise just have a border. */
+  --shadow-card-from: 0 1px 2px rgba(60, 40, 20, 0.05);
+  --shadow-card-to: 0 6px 18px rgba(60, 40, 20, 0.08);
+}
+
+html, body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: var(--letter-spacing-tight);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.app-shell {
+  max-width: 430px;
+  margin-inline: auto;
+  min-height: 100dvh;
+  background: var(--color-surface);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 60px rgba(60, 40, 20, 0.08);
+}
+
+/* Card shadow — applied via the .card-shadow class. */
+.card-shadow {
+  box-shadow: var(--shadow-card-from), var(--shadow-card-to);
+}
+
+/* Six warm gradient pairs for cluster avatars. Indexed by hash. */
+.avatar-grad-0 { background-image: linear-gradient(135deg, #d68a55, #b35a2e); }
+.avatar-grad-1 { background-image: linear-gradient(135deg, #c98c5c, #8f4a26); }
+.avatar-grad-2 { background-image: linear-gradient(135deg, #a06a4a, #5e3722); }
+.avatar-grad-3 { background-image: linear-gradient(135deg, #3a7aaf, #1b4f8a); }
+.avatar-grad-4 { background-image: linear-gradient(135deg, #6d97c4, #2f5f93); }
+.avatar-grad-5 { background-image: linear-gradient(135deg, #b89164, #7a5a36); }

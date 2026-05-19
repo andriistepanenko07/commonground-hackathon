@@ -1,0 +1,968 @@
+[
+  {
+    "id": "u-r-pw-01",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "Hey, you can call me Maya. I just moved to Rotterdam about three weeks ago — doing a master's in urban design at TU Delft, so I'm commuting but living here.",
+      "I'm in Oude Westen, near Witte de Withstraat. The cafés on that street basically convinced me to take the flat.",
+      "I love long walks with my camera, mostly film stuff. I'll spend a whole Sunday wandering the Maashaven docks just looking for light. Slow coffee places are my other weakness.",
+      "I also read a lot — mostly architecture and city planning books, which fits the degree. And I'm slowly trying to figure out Dutch.",
+      "Weeknight evenings are good after class — say from seven onwards — and most of Sunday. English mostly, decent Spanish, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-r-pw-02",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "Hi, I'm Daan. I've been in Rotterdam my whole life — 34 now, work as a copywriter for a small agency in Kralingen.",
+      "I live in Crooswijk, in one of those side streets near the park. Honestly the quietest bit of the city if you know where to look.",
+      "Big into photography — Leica nerd, sorry — and just walking the city. I've done a loose project of the same five bridges over three years. Coffee, books, the slow stuff.",
+      "I'd like to meet a few new people, not for any big reason, just feel like my circle's gone quiet. Happy to show newcomers around too.",
+      "Weeknight evenings and weekend afternoons both work. Dutch and English, conversational German."
+    ]
+  },
+  {
+    "id": "u-r-pw-03",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Priya. Moved over from Bangalore for a job at a Rotterdam firm — UX design at a fintech. About four months in.",
+      "Living in Kop van Zuid, twentieth floor, view of the Erasmusbrug if you lean. It's slightly mad but I love it.",
+      "I take a lot of phone photos, mostly architectural details — I find the brick patterns here completely different from what I grew up with. Long walks along the water. Slow weekend coffees.",
+      "I've started reading more — mostly Dutch authors in translation, trying to figure the country out. And I'd love to find people who do photo walks together.",
+      "Weekday evenings are stretched but Saturday and Sunday daytimes are wide open. English fluent, Hindi, picking up basic Dutch."
+    ]
+  },
+  {
+    "id": "u-r-pw-04",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Tomas, just call me Tom. Came from Prague for a PhD in architecture, started in February.",
+      "Renting a small studio in Cool district, right next to the Lijnbaan. Walking distance to almost everything.",
+      "I'm into photography — Czech tradition has a thing about it — and I read constantly, mostly philosophy of urban space. Long walks help me think. Coffee, mostly black.",
+      "I'd genuinely like a small group to wander the city with. I don't need talkative, just companion-y.",
+      "Weekday evenings after seven, both weekend days. Czech, English, intermediate German, no Dutch yet."
+    ]
+  },
+  {
+    "id": "u-r-pw-05",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "Sofia here. I moved from Bologna last summer with my partner who got a job here. I'm doing freelance graphic design.",
+      "We're in Delfshaven, in one of the old houses by the canal. The whole area feels quietly alive.",
+      "Photography is the through-line — I shoot medium format. I read a lot, mainly Italian fiction. And I love a long, slow walk with a coffee stop halfway.",
+      "Honestly I want to meet people through doing things rather than going for a drink. A photo walk would be perfect.",
+      "I work from home so I'm flexible — weekday afternoons can work, definitely Sunday. Italian, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-01",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Lukas. Moved from Poznań to Rotterdam two months ago for a logistics coordinator role at the port. Twenty-eight, first time living abroad.",
+      "Living in Beverwaard, the south side. Cheaper, calmer, decent tram in.",
+      "I cook a lot — Polish things mostly, but I'm getting into Dutch produce. And I'm a board games guy. Catan, Wingspan, the heavier ones too.",
+      "I bake on Sundays — rye bread, pierogi when I'm homesick. I like wine but only the white stuff.",
+      "Weeknight evenings free, both weekend days. Polish, English, very basic Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-02",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "Hi, Anneke. I'm 41, live in Rotterdam, work in HR. Lived here forever, originally from Friesland.",
+      "I'm in Hillegersberg, the leafy bit north of the centre. Two kids, both in primary.",
+      "I'd love to meet a few people through cooking and board games — that's genuinely how I unwind. Vegan-ish, I cook a lot of it. Big into baking, especially sourdough.",
+      "I'm also one of those Dutch people who actually wants to help newcomers feel a bit at home — friend told me about this app.",
+      "Weeknight evenings after the kids are down — eight onwards — and Saturday afternoons. Dutch, English, German."
+    ]
+  },
+  {
+    "id": "u-r-cg-03",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Joon. Came from Seoul about a year ago for my partner's job at Erasmus MC.",
+      "We're in Blijdorp, walking distance to the zoo and Park 1943. I'm not working right now, taking time to settle in.",
+      "Cooking is basically my whole identity at the moment — Korean home stuff, but I've started doing fusion with whatever's at the Saturday market. Board games are a weekly ritual with my partner.",
+      "I'd love to find people who cook together. And I'm pretty good at wine pairings, even if I shouldn't say so.",
+      "Honestly any time, I'm very flexible — weekday daytimes too. Korean, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-04",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "Mark, 38. From Liverpool originally, in Rotterdam for ten years now. Civil engineer.",
+      "I'm in Kralingen, near the lake. Walk around it nearly every morning.",
+      "Big home cook — Italian and Middle Eastern lately. I host a monthly board game evening, mostly heavier strategy stuff. Bread baking on the weekends.",
+      "I'd like to help newcomers a bit — I remember how lost I was. Wine I'll drink, podcasts I'll talk about endlessly.",
+      "Weeknight evenings always free, Saturdays for the bigger gatherings. English, Dutch, basic Italian."
+    ]
+  },
+  {
+    "id": "u-r-cg-05",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Hana. 26, moved from Brno for a junior data scientist role at a Rotterdam fintech. Started two months ago.",
+      "Renting a room near Eendrachtsplein, very central, slightly noisy but I love being able to walk everywhere.",
+      "I cook constantly — vegan, partly for health, partly because it's the kind of cooking I'm interested in. Sourdough obsession. Board games every chance I get.",
+      "Podcasts on my commute, mainly food and travel ones. White wine on a slow evening.",
+      "Most weekday evenings, both weekend days. Czech, English, slowly learning Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-01",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "Hi, I'm Sven. Just moved from Hamburg for a music journalism job here — started in March.",
+      "I'm in De Pijp, near the Albert Cuyp. Loud, fun, my flat smells like the food market every day, no complaints.",
+      "Live music is my actual job and my actual hobby. Jazz, post-rock, anything good in a small room. I cycle everywhere. Drink the local beer like it's water.",
+      "I'd love to find a few people who hit shows together — I keep going alone and it's getting old.",
+      "Most weeknights after eight, weekends pretty open. German, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-02",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "Femke. Born in Amsterdam, 33. Work as an illustrator, mostly children's books.",
+      "I live in the Jordaan, one of those tiny canal-side flats that always smell like the bakery downstairs.",
+      "Live music is the thing — I go to jazz shows almost weekly. Cycling around the city for hours. I like neighbourhood bars over big places. Some art-school habits I haven't shaken — sketching in cafés.",
+      "I want to meet new people, my circle has gotten smaller since friends moved out of the city.",
+      "Weeknight evenings, Saturday late afternoons. Dutch, English, conversational French."
+    ]
+  },
+  {
+    "id": "u-a-lm-03",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Adrien. Moved from Lyon two months ago — relocated for a product management role at a fintech in Amsterdam.",
+      "I'm in Oud-West, near Bilderdijkstraat. Quiet street, loud weekends.",
+      "I'm obsessed with live music — anything from jazz to electronic, the small venues are why I picked Amsterdam over Berlin. Cycling I'm learning to enjoy. Art galleries on slow Sundays.",
+      "I like dive bars over fancy ones. And I'd genuinely love to find a few people to share shows with.",
+      "Weekday evenings, Saturday all day, Sunday afternoons. French, English, almost no Dutch yet."
+    ]
+  },
+  {
+    "id": "u-a-lm-04",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Owen. Came from Dublin for a partner who got a job at the Concertgebouw, so we landed in Amsterdam four months ago.",
+      "We're in Oud-Zuid, walking distance to the museums. Honestly almost too pretty.",
+      "Live music — partner's a violinist so it's the household soundtrack. I lean jazz and rock though. I cycle. Beer over wine. I draw a bit, never seriously.",
+      "I'd love to find some people for gigs and bar evenings. Not big into clubs.",
+      "Weeknight evenings work, weekends a bit hit-or-miss. English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-05",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "Karin, 52. Amsterdam-born, recently semi-retired from a long career as a museum curator.",
+      "I live in De Baarsjes, one of those west-side streets with the old trams.",
+      "I want to spend this next stretch of life properly — going to shows, helping new arrivals find their way in. Jazz especially. Long bike rides. I still go to bars I like.",
+      "I'm not looking to be anyone's mentor, just to share a city I love.",
+      "Most weeknight evenings, weekend afternoons. Dutch, English, German, French."
+    ]
+  },
+  {
+    "id": "u-a-od-01",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "Hey, I'm Elena. Moved from Madrid four months ago, work in marketing at a SaaS company near Sloterdijk.",
+      "Living in Westerpark, three minutes from the park. Run there every morning.",
+      "Big runner — half marathons. Yoga twice a week. Started padel since I got here, completely hooked. Hiking on long weekends, the Dunes are amazing.",
+      "I'd like to find a few people who do active stuff together. I'm tired of running alone.",
+      "Weekday mornings before work, weekend mornings always. Spanish, English, learning Dutch slowly."
+    ]
+  },
+  {
+    "id": "u-a-od-02",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Jasper. 29, born and raised Amsterdammer. Software engineer, work fully remote.",
+      "I live in Noord, took the ferry-life thing seriously about three years ago. Love it.",
+      "I run a lot, swim in the IJ in the summer, started padel about a year ago. Hiking trips when I can. Yoga in the off-mornings.",
+      "I just want to meet a few new active people — friend group has thinned a bit since some moved to Berlin.",
+      "Weekday mornings (work flexes), weekend mornings, some weekend afternoons. Dutch, English."
+    ]
+  },
+  {
+    "id": "u-a-od-03",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "Hi, I'm Aida. Came from Sofia two months ago for a partner who's doing a PhD at UvA.",
+      "We're in Oost, near Oosterpark. The park is half the reason we chose the flat.",
+      "I'm a runner — used to compete on the track. Yoga most days. I picked up padel almost the day I arrived. Long hikes when we can get out of the city.",
+      "Looking to meet a few people through sport — I find it the easiest way.",
+      "Weekday mornings, both weekend days for runs and games. Bulgarian, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-a-od-04",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Lucas. Moved from São Paulo a year ago for a job in renewable energy — engineer.",
+      "I live in Oud-West, easy cycle into the centre and out to the parks both ways.",
+      "Running is the constant — I do most of the longer ones in Amsterdamse Bos. Padel weekly. Yoga to stay sane. Big into swimming open water.",
+      "I'd love to find a small group for active things. The work crowd's nice but mostly indoor people.",
+      "Weekday mornings, Saturday all day, Sunday morning. Portuguese, Spanish, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-a-od-05",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Mei. Moved from Taipei eight months ago for a master's at UvA in psychology.",
+      "I'm in De Pijp, sharing with a friend from the programme. Loud, but a block from Sarphatipark.",
+      "I run every morning, slowly — Sarphatipark loop. Yoga at a tiny studio on Cornelis Troostplein. I started padel with classmates, surprisingly fun. Love a long hike.",
+      "I want to meet people outside the master's bubble.",
+      "Weekday mornings before class, weekend mornings, sometimes Sunday afternoons. Mandarin, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-01",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Astrid. Just moved from Stockholm for a policy role at one of the international tribunals here. Three weeks in.",
+      "Living in Statenkwartier, near the embassies. Walkable, quiet, slightly stately.",
+      "I play chess, badly but enthusiastically. I read constantly, mostly history and contemporary fiction. Museums — Mauritshuis was my first weekend out. I'd love to swap languages with someone.",
+      "I'm trying to learn Dutch properly, not just survival phrases. Theatre I miss already.",
+      "Weeknight evenings free, Sunday afternoons reliable. Swedish, English, German, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-02",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "Wouter, 47. Born in Leiden, lived in The Hague for twenty years. I teach Dutch as a second language at an adult college.",
+      "I'm in Bezuidenhout, the older bit near the train station.",
+      "Chess is a habit, I play at a small club on Tuesdays. Books endlessly, mostly translated literature. Theatre nights at the Nationale. And language exchange — I do it for fun, not work.",
+      "I'd genuinely like to help newcomers find their feet — I see it from the teaching side every day.",
+      "Weeknight evenings except Tuesdays, weekend afternoons. Dutch, English, French, German."
+    ]
+  },
+  {
+    "id": "u-h-qc-03",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Yuki. Moved from Kyoto last year for a job at a research institute — economics. Twenty-nine.",
+      "I'm in Archipelbuurt, an apartment with a tiny balcony and too many books.",
+      "I play chess online and at the club near Westeinde. Read a lot, museums obsessively — the Mauritshuis is half my weekends. Trying to learn Dutch properly, exchange partner welcome.",
+      "I think I want a small group, not a big one. Calm people.",
+      "Weeknight evenings, weekend afternoons. Japanese, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-04",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "Hi, I'm Rafael. Moved from Buenos Aires four months ago for a master's in international law at Leiden, commuting from The Hague.",
+      "I live in Centrum, near the Passage. Walkable and full of small bookshops.",
+      "Chess is a long-time thing — used to play tournaments. Reading takes up most of my evenings. Museums, theatre when I can. I'd love to swap Spanish for Dutch with someone patient.",
+      "I'm not after a big social scene, just a few thoughtful people.",
+      "Weeknight evenings after eight, Sunday afternoons. Spanish, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-05",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Sanne. Born here, 61, just retired from a translator's career.",
+      "I'm in Benoordenhout, lived in the same flat for thirty years.",
+      "Chess at the club, reading more than ever, theatre season tickets. I help with language exchange at the library — Dutch for English mostly. Mauritshuis volunteer one morning a week.",
+      "I'd like to meet a few new arrivals through this — I miss the curiosity of newcomers, honestly.",
+      "Weekday daytimes mostly free, weekend afternoons. Dutch, English, French, German, decent Italian."
+    ]
+  },
+  {
+    "id": "u-h-dn-01",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Camila. Moved from Bogotá six months ago for a partner who works at a think-tank here. I'm freelancing as a translator.",
+      "We're in Scheveningen, two minutes from the boulevard. Walking on the beach has become a daily ritual.",
+      "Tango — I've been dancing for ten years, salsa before that. Latin music in general. I'd love to swap Spanish for Dutch.",
+      "Looking for people who dance, or who want to start. The Hague has a small but real scene.",
+      "Weeknight evenings, Sunday afternoons. Spanish, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-02",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Tim. 36, from The Hague, software developer.",
+      "I'm in Bezuidenhout, lived here most of my life.",
+      "I dance salsa, mostly Friday nights. Started tango last year, slowly getting better. Latin music plays in my car constantly. I also do language exchange — picked up Spanish that way.",
+      "I want to meet a few new people through dance — that's how I've made every friend I have.",
+      "Weeknight evenings, Friday and Saturday nights. Dutch, English, conversational Spanish."
+    ]
+  },
+  {
+    "id": "u-h-dn-03",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Pia. Came from Naples a year ago, work as a graphic designer at a small studio.",
+      "I'm in Regentessekwartier, next to the canal. I cycle to work in ten minutes.",
+      "Tango is the thing — I dance four nights a week if I can. Salsa as a warm-up. Latin music, the whole spectrum. Language exchange to keep my Dutch alive — and pick up Portuguese.",
+      "I'd love to find a small group who dance and just hang out.",
+      "Weeknight evenings, all of Saturday and Sunday. Italian, English, intermediate Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-04",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "Hi, I'm Kofi. Moved from Accra two months ago for a doctorate at TU Delft, but I prefer living in The Hague — closer to the beach.",
+      "Right by Hollands Spoor in Statenkwartier-ish area, top floor of an old building.",
+      "Dance is my non-academic life — salsa mostly, getting into tango, some bachata. Latin music. I'm doing a Dutch class for language exchange too.",
+      "I want a small dance-y crowd. The Hague has the right energy for it.",
+      "Weeknight evenings, full weekends. English, Twi, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-05",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Marta. Moved from Lisbon three months ago — my partner works at the OPCW.",
+      "We're in Archipelbuurt, lots of leafy streets, very quiet at night.",
+      "Tango and salsa for years — danced semi-professionally in my twenties, just for fun now. Latin music always playing. Language exchange — I'd love to maintain my Spanish and start Dutch.",
+      "Small group, dance-focused, would be perfect.",
+      "Weeknight evenings, Saturday and Sunday afternoons. Portuguese, Spanish, English, basic Dutch."
+    ]
+  },
+
+  {
+    "id": "u-r-pw-06",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Ola. Moved from Kraków a month ago — I'm a mid-career architect, just joined a Rotterdam firm doing public-space work.",
+      "I'm in the Wijnhaven bit of Centrum, in one of those new towers, view straight at the Erasmusbrug.",
+      "Photography is the through-line — mostly architectural, sometimes street. I take long walks with the camera every weekend, all over the city.",
+      "I read a lot, mostly history and design. Slow coffee at small places is my reward for being outside in the cold.",
+      "Weeknight evenings and Saturday daytime work best. Polish, English, basic German, no Dutch yet."
+    ]
+  },
+  {
+    "id": "u-r-pw-07",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "Hey, I'm Ravi. Came from Bangalore in March for a data-engineering role at a Rotterdam logistics company.",
+      "I live in Kralingen, near the lake, about a 20-minute cycle to the office.",
+      "I started taking film photos about a year ago — I'm slow at it, which I think is the point. Long walks around the lake are how I think.",
+      "I also love film, the proper sit-in-a-cinema kind, and a slow coffee on a Sunday before everyone else is awake.",
+      "Weeknight evenings after seven and full Sundays. English, Hindi, Kannada, picking up Dutch words."
+    ]
+  },
+  {
+    "id": "u-r-pw-08",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Hannah. Born here, 38, work as an editor for an architecture magazine.",
+      "I live in Noord, in one of the smaller streets near the Schiekade. Lots of light, quiet evenings.",
+      "Photography is my long thing — I shoot medium format, slowly. I do ceramics on the side, terrible but enjoyable.",
+      "Reading is a daily habit. Long walks the city are where I clear my head, often with a coffee stop.",
+      "Weeknight evenings and Saturday afternoons. Dutch, English, conversational French."
+    ]
+  },
+  {
+    "id": "u-r-pw-09",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "Hi, I'm Mateo. Moved from Mexico City last September to do a master's in film at the Willem de Kooning Academy.",
+      "I'm in Cool, very central, paying too much for a tiny flat but I can walk everywhere.",
+      "Film is the obvious one — I shoot 16mm when I can afford to. Photography on the side, also analogue. Long walks looking for locations.",
+      "Slow coffee places are where I do most of my reading. Art galleries on Sundays.",
+      "Weeknight evenings, weekend daytimes, sometimes Sunday evening. Spanish, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-r-pw-10",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Esther. Came from Kyiv five months ago — my partner got work here. I'm freelancing as a photographer.",
+      "We're in Delfshaven, in one of the old houses on the canal. The light is incredible in the late afternoon.",
+      "Photography is my work and my hobby — I can't really separate them. Film, mostly portraits. Long walks looking for things to shoot.",
+      "I read constantly, mainly Ukrainian fiction in translation, and I love a long slow coffee somewhere quiet.",
+      "Weekday daytimes work for me, plus most weekends. Ukrainian, Russian, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-r-pw-11",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Bram. Lived in Rotterdam most of my life, recently retired from teaching architectural history at Erasmus.",
+      "I'm in Hillegersberg, near the lakes. Walk around them every morning, rain or sun.",
+      "I want to help a few newcomers find their footing — I see the city change every year and miss meeting new people.",
+      "Photography is a lifelong habit, mostly black-and-white. Books I'm never not reading. Long walks and slow coffee close out the week.",
+      "Weekday daytimes, weekday evenings, Saturday afternoons. Dutch, English, French, conversational German."
+    ]
+  },
+  {
+    "id": "u-r-pw-12",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "Yara here. Moved from Beirut six months ago for a junior graphic-design role at a small Rotterdam studio.",
+      "I'm in Centrum, just behind the Markthal. Walk to work in eight minutes.",
+      "Photography is my way of paying attention to the city — phone mostly, sometimes a small Ricoh. Long walks down to the river.",
+      "I sketch in cafés, drink slow coffee, read whatever a friend recommends.",
+      "Weeknight evenings, both weekend days. Arabic, French, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-r-pw-13",
+    "city": "Rotterdam",
+    "cluster_hint": "photo-walks",
+    "replies": [
+      "I'm Stefan. Came from Vienna a year ago for a city-planner role at the municipality.",
+      "I live in Kop van Zuid, fifteenth floor, view of the bridge. Yes, I take photos of it constantly.",
+      "Long walks are how I learn a city — I've done most of Rotterdam on foot now. Photography, mostly architectural, fits naturally.",
+      "I read a lot of urbanism and urban-history books, often at a slow coffee place near Hofbogen.",
+      "Weeknight evenings, weekend daytimes. German, English, basic Dutch."
+    ]
+  },
+
+  {
+    "id": "u-r-cg-06",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Carlos. Came from Barcelona four months ago to work as a sous chef at a place in Witte de Withstraat.",
+      "I live nearby in Centrum, two minutes from the restaurant which is a blessing and a curse.",
+      "Cooking is obviously the job — but my hobby is cooking for friends, slowly, with wine. I bake on my days off, Spanish breads mostly.",
+      "Board games are my decompression thing — heavy ones, Twilight Imperium kind of evenings.",
+      "Weekday daytimes (I work nights), some Sunday afternoons. Spanish, Catalan, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-07",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "Linda here. Born in Dordrecht, lived in Rotterdam for fifteen years. Forty, work as a paediatric nurse.",
+      "I live in Schiebroek, very quiet, garden out back, perfect for the dog.",
+      "Board games are basically my Saturday — I host a group, mostly mid-weight stuff like Wingspan and Brass.",
+      "I cook a lot, baking is the part I love most — sourdough every Sunday. Glass of wine while it proves.",
+      "Weeknight evenings after seven, Saturday afternoons. Dutch, English, basic German."
+    ]
+  },
+  {
+    "id": "u-r-cg-08",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Ahmet. Moved from Istanbul nine months ago for an engineering role at the port.",
+      "I live in Beverwaard, southern side of the city, cheaper and very quiet.",
+      "Cooking is my main joy — Turkish home stuff, slowly learning Dutch produce. I bake börek almost every weekend.",
+      "Board games on Friday nights, podcasts on the long commute, wine sometimes.",
+      "Weeknight evenings, both weekend days. Turkish, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-09",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "Hi, I'm Beatrix. Came from Munich last September for a master's in environmental engineering.",
+      "I'm in Centrum near Eendrachtsplein, sharing with two other students.",
+      "I cook vegan almost daily — mostly out of curiosity. I'm into baking too, especially anything with rye.",
+      "Board games are how my flat decompresses, podcasts on the commute. I don't drink much wine but I respect those who do.",
+      "Weeknight evenings, both weekend days. German, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-10",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Sander, 55, born here. Used to run a small restaurant, now consulting.",
+      "I live in Kralingen, near the lake, with my wife and a large dog.",
+      "I'd like to help newcomers feel a bit at home — cooking is the easiest way to do that. Big home cook, baker, wine person.",
+      "Board games most weekends — I keep getting heavier ones, my friends keep groaning. Podcasts on the commute when I have one.",
+      "Weeknight evenings, both weekend days. Dutch, English, Italian, French."
+    ]
+  },
+  {
+    "id": "u-r-cg-11",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "Nia here. Moved from Bucharest seven months ago for a marketing job at a Rotterdam health-tech company.",
+      "I'm in Crooswijk, a little flat near the park.",
+      "I cook constantly — mostly vegan since I moved here, Romanian comfort food on Sundays. Baking is the other obsession, mostly sourdough.",
+      "Board games are my favourite way to meet people. Podcasts on my walk to work.",
+      "Weeknight evenings, both weekend days. Romanian, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-12",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Pablo. Came from Buenos Aires a year ago — partner's job. I'm a backend developer.",
+      "We're in Delfshaven, old house, two cats, too many books.",
+      "Cooking is the family thing — Argentine asados when the weather is even half-decent, baking in winter. Wine I'm slightly snobby about.",
+      "Board games most Friday nights. Latin music in the kitchen at all times.",
+      "Weeknight evenings, full weekends. Spanish, English, Italian, picking up Dutch."
+    ]
+  },
+  {
+    "id": "u-r-cg-13",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Floor. Born in Eindhoven, lived in Rotterdam for six years. Twenty-nine, work as a social worker.",
+      "I'm in Noord, near Bergweg, with a small balcony I cook on in summer.",
+      "Vegan cooking is the daily thing — I'd love to swap recipes with people. Baking on Sundays.",
+      "Board games are my Saturday evening default. Podcasts everywhere.",
+      "Weeknight evenings, both weekend days. Dutch, English, basic Spanish."
+    ]
+  },
+  {
+    "id": "u-r-cg-14",
+    "city": "Rotterdam",
+    "cluster_hint": "cook-games",
+    "replies": [
+      "I'm Ines. Moved from Porto last autumn for a senior-nurse role at Erasmus MC.",
+      "I'm in Centrum, near the Lijnbaan, walking distance to almost everything.",
+      "Cooking is my anchor — Portuguese comfort food, lots of baking, sourdough and broa de milho.",
+      "I love wine, mostly Portuguese. Board games on slow Saturdays, podcasts on the way to work.",
+      "Weekday daytimes (I work odd shifts), weekend daytimes too. Portuguese, English, beginner Dutch."
+    ]
+  },
+
+  {
+    "id": "u-a-lm-06",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "Hey, I'm Marco. Came from Milan eight months ago for an architecture firm in Amsterdam.",
+      "I'm in Oud-West, near the Kinkerstraat. Loud, cheap-ish dinners, near every venue I care about.",
+      "Live music is the reason I picked Amsterdam over Berlin. Jazz mostly, indie sometimes. I draw in venues a lot.",
+      "I cycle everywhere, drink local beer, art galleries on slow days.",
+      "Weeknight evenings, both weekend days. Italian, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-07",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Yusuf. Moved from Cairo for a master's at the Conservatorium last September.",
+      "I live in De Pijp, sharing with two other students, cycling to class.",
+      "Live music is my degree and my life — jazz and electronic both. I DJ small parties on weekends.",
+      "Beer, bars, late conversations. I don't have many other hobbies because I'm always somewhere with sound.",
+      "Weeknight evenings, weekend evenings, sometimes Saturday afternoons. Arabic, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-08",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Lotte. Born in Haarlem, lived in Amsterdam for a decade. Thirty-one, graphic designer.",
+      "I live in Jordaan, in a canal-side flat above a bar (yes, I hear it).",
+      "Live music — jazz especially — is my weekly thing. Cycling everywhere, art galleries, beer in small bars.",
+      "I'd love to meet a few new people who hit shows. My circle keeps moving abroad.",
+      "Weeknight evenings, Saturday afternoons. Dutch, English, French."
+    ]
+  },
+  {
+    "id": "u-a-lm-09",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Mariana. Moved from São Paulo four months ago — my partner started a job here.",
+      "We're in Oost, near Oosterpark, cycling distance from most venues.",
+      "Live music is the heart of it for me — jazz, samba nights, anything in a small room. Beer over cocktails.",
+      "Cycling I learned the hard way, now I love it. Art when I can fit it in.",
+      "Weeknight evenings, weekend daytimes. Portuguese, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-10",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "Pieter, 45. Amsterdam-born, work as a music producer mostly out of a small studio in Noord.",
+      "I live in De Baarsjes, in a flat I bought a million years ago.",
+      "I want to help newcomers find the real live-music scene — not just the Paradiso headliners.",
+      "Jazz is the deepest love, cycling is non-negotiable, beer in small bars is the social setting I default to.",
+      "Weeknight evenings, weekend afternoons. Dutch, English, German."
+    ]
+  },
+  {
+    "id": "u-a-lm-11",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Selma. Came from Paris six months ago for a UX-design role at a fintech.",
+      "I live in Westerpark, near the gas works. Cycle through the park every morning.",
+      "Live music — jazz especially — is what I do most evenings. Art galleries on Sundays.",
+      "Cycling is the way I navigate the city, beer is the social glue.",
+      "Weeknight evenings, weekend daytimes, Sunday afternoons. French, English, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-12",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "I'm Niko. Moved from Athens two years ago for a sound-engineer job at a recording studio.",
+      "I live in Noord, near the IJ. Take the ferry every day, never gets old.",
+      "Live music is the job and the obsession. Jazz, anything experimental, the small rooms over the festivals.",
+      "Cycling, bars where I know the owner, occasional recording sessions on weekends.",
+      "Weeknight evenings, weekend afternoons. Greek, English, intermediate Dutch."
+    ]
+  },
+  {
+    "id": "u-a-lm-13",
+    "city": "Amsterdam",
+    "cluster_hint": "live-music",
+    "replies": [
+      "Daria here. Moved from St. Petersburg ten months ago to write for an Amsterdam literary magazine.",
+      "I'm in Centrum, near Spui, in a tiny apartment with very tall windows.",
+      "Live music is my weekly ritual — jazz on weeknights, more chaotic stuff on weekends. I drink beer like it's research.",
+      "Art exhibitions on slow Sundays, walking the canals after a show.",
+      "Weeknight evenings, weekend evenings. Russian, English, basic Dutch."
+    ]
+  },
+
+  {
+    "id": "u-a-od-06",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "Hey, I'm Henrik. Came from Oslo a year ago for a data-scientist role at a logistics company.",
+      "I live in Noord, near the ferry. Run along the IJ every morning.",
+      "Running is the constant — I do marathons. Hiking trips when I can. Open-water swimming in the IJ, summer only.",
+      "I picked up padel since arriving, surprisingly good fun.",
+      "Weekday mornings, weekend mornings, sometimes Sunday afternoons. Norwegian, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-a-od-07",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Sara. Born in Utrecht, lived in Amsterdam six years. Twenty-eight, physiotherapist.",
+      "I live in De Pijp, near Sarphatipark, run the loop before work.",
+      "Yoga and running are my baseline — I teach a yoga class on Saturday mornings.",
+      "Padel weekly, hiking trips when I can get out of the city.",
+      "Weekday mornings, Saturday all day, Sunday mornings. Dutch, English."
+    ]
+  },
+  {
+    "id": "u-a-od-08",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Diego. Moved from Medellín a year ago for an engineering role in renewable energy.",
+      "I'm in Westerpark, three minutes from the park, run there daily.",
+      "Padel is my favourite — I'd play four times a week if I could. Running, hiking, cycling everywhere.",
+      "Outdoor weekends are how I recover from desk life.",
+      "Weekday mornings before work, both weekend days. Spanish, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-a-od-09",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Mila. Came from Zagreb last September to do a master's in environmental science at UvA.",
+      "I live in Oost, near the Tropenmuseum, sharing with friends.",
+      "Yoga is daily, running every other day. Hiking on weekends when we leave the city. Swimming when warm enough.",
+      "I want to meet people through sport, that's the easiest way for me.",
+      "Weekday mornings, weekend mornings, sometimes Sunday afternoons. Croatian, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-a-od-10",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Job. 44, lived in Amsterdam for twenty years, outdoor-pursuits instructor.",
+      "I live in Zuid, near the Amsterdamse Bos.",
+      "I want to help newcomers find their outdoor people — it's the easiest way to make this city feel like home.",
+      "Running, hiking, yoga, padel, all of it. I lead hikes most weekends.",
+      "Weekday mornings, weekday evenings, both weekend days. Dutch, English, German."
+    ]
+  },
+  {
+    "id": "u-a-od-11",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "Aylin here. Moved from Istanbul five months ago for an architecture-firm job.",
+      "I'm in Oud-West, near Bilderdijkpark.",
+      "Running every morning, yoga twice a week, padel when I can. I just started climbing at a gym in Noord.",
+      "Hiking trips on long weekends — I'm trying to see all of the Veluwe.",
+      "Weekday mornings, weekend daytimes. Turkish, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-a-od-12",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Robin. Came from Antwerp a year and a half ago for a consulting job.",
+      "I live in Noord, just past Buiksloterweg.",
+      "Running is the main one — half marathons, a marathon every now and then. Padel weekly, hiking long weekends.",
+      "I cycle to work, used to commute by car, won't go back.",
+      "Weekday mornings, Saturday all day, Sunday morning. Dutch, French, English."
+    ]
+  },
+  {
+    "id": "u-a-od-13",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "I'm Tess. Born and raised here, thirty-two, primary-school teacher.",
+      "I live in De Baarsjes, near the Erasmuspark.",
+      "Yoga most mornings, running the rest. Padel club on Wednesdays.",
+      "I'd love to find more active people to do weekend hikes with — my work crowd is mostly indoor.",
+      "Weekday mornings before school, weekend mornings, Saturday afternoons. Dutch, English, basic German."
+    ]
+  },
+  {
+    "id": "u-a-od-14",
+    "city": "Amsterdam",
+    "cluster_hint": "outdoors",
+    "replies": [
+      "Andrei here. Came from Cluj-Napoca eight months ago for an engineering role.",
+      "I'm in Westerpark, near the gas works, run there every morning.",
+      "Padel is my favourite — I'd play daily if I could. Running, hiking, swimming when the IJ allows.",
+      "Outdoor weekends are non-negotiable for me.",
+      "Weekday mornings, both weekend days. Romanian, English, beginner Dutch."
+    ]
+  },
+
+  {
+    "id": "u-h-qc-06",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Mikhail. Moved from Moscow last year for a role at one of the international tribunals.",
+      "I live in Centrum, near the Lange Voorhout, ten minutes' walk to almost everything.",
+      "I play chess seriously — I was a candidate master in my twenties, less serious now. Books constantly, mostly history.",
+      "Museums are my Sunday default, Mauritshuis especially. I'd love language exchange — improving my Dutch and helping someone with Russian.",
+      "Weeknight evenings, Sunday afternoons. Russian, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-07",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "Aoife here. Moved from Dublin six months ago for a legal-officer role at the ICJ.",
+      "I'm in Statenkwartier, in a quiet street near the embassy block.",
+      "Books, museums, theatre — that's most of my evenings. I play chess online and try to make it to the club on Tuesdays.",
+      "I'd love a language-exchange partner for Dutch.",
+      "Weeknight evenings, Sunday afternoons. English, conversational French, learning Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-08",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Bert, 62, born here, antiques dealer for thirty-five years.",
+      "I'm in Bezuidenhout, in the same flat I've been in since 1998.",
+      "Chess is the lifelong thing — club nights, weekend tournaments occasionally. Books endlessly, mainly history. Museums weekly.",
+      "I'd like to meet new arrivals who appreciate the older bits of the city.",
+      "Weekday daytimes, weeknight evenings, weekend afternoons. Dutch, English, French, German."
+    ]
+  },
+  {
+    "id": "u-h-qc-09",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "Hi, I'm Linh. Came from Hanoi for a master's in international affairs at Leiden, commuting from The Hague.",
+      "I'm in Archipelbuurt, in a small studio with the right amount of light.",
+      "Chess, books, museums — I'm a quiet evenings kind of person. Mauritshuis is my favourite walk-in space.",
+      "Language exchange for Dutch would be ideal, I'm slow but determined.",
+      "Weeknight evenings, weekend afternoons. Vietnamese, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-10",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Marina. Moved from Rome ten months ago — partner works at a UN body here.",
+      "We're in Statenkwartier, near the sea, with two kids in primary.",
+      "Museums I do constantly with the kids and on my own. Books almost daily. Chess casually with my eldest.",
+      "I'd love a language-exchange partner — keep my Italian sharp, get my Dutch moving.",
+      "Weeknight evenings after the kids are down, weekend afternoons. Italian, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-11",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Hadi. Came from Tehran two years ago for a research role at a policy institute.",
+      "I live in Centrum, near the Spui, where the bookshops are.",
+      "Chess, philosophy books, museums — those are the slow things that keep me in shape mentally. Theatre when I can.",
+      "Language exchange is something I'd love, especially Dutch.",
+      "Weeknight evenings, Saturday afternoons, Sunday daytimes. Persian, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-qc-12",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "I'm Joke. 68, born here, retired librarian.",
+      "I'm in Benoordenhout, lived in the same building since the eighties.",
+      "I help out at the library's language-exchange evenings — I love hearing newcomers practise. Books constantly, museums weekly.",
+      "Chess casually at the club. Theatre season tickets.",
+      "Weekday daytimes, weeknight evenings, weekend afternoons. Dutch, English, French, German, intermediate Italian."
+    ]
+  },
+  {
+    "id": "u-h-qc-13",
+    "city": "The Hague",
+    "cluster_hint": "quiet-curious",
+    "replies": [
+      "Klaas, 65, born here, retired from the civil service.",
+      "I live in Bezuidenhout, walking distance from the central library.",
+      "Chess at the club Tuesdays and Saturdays. Books non-stop, mostly history. Museums whenever there's something new.",
+      "I'd genuinely like to help newcomers find their feet.",
+      "Weekday daytimes, weeknight evenings, weekend afternoons. Dutch, English, German, French."
+    ]
+  },
+
+  {
+    "id": "u-h-dn-06",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Lucia. Moved from Mexico City five months ago for a consulting role.",
+      "I'm in Centrum, near the Spui, easy walk to the dance studios.",
+      "Tango is the deep thing — I've been dancing for eight years. Salsa for warmups. Latin music plays in my flat constantly.",
+      "I'd love language exchange — keep my Spanish active, learn Dutch.",
+      "Weeknight evenings, Saturday and Sunday afternoons. Spanish, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-07",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Mounir. Came from Casablanca a year ago for an engineering role at a research lab.",
+      "I live in Regentessekwartier, cycling distance from the centre.",
+      "Salsa is the main one, started bachata last year, slowly getting better. Latin music everywhere.",
+      "I do language exchange to keep up my Spanish — and start Dutch properly.",
+      "Weeknight evenings, weekend evenings. Arabic, French, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-08",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "Maaike, 39. Born here, secondary-school teacher.",
+      "I live in Statenkwartier, near the sea, walk on the beach often.",
+      "Tango is the love — I started fifteen years ago, never stopped. Salsa for variety. Latin music, lots of books.",
+      "I want to meet a few new people through dance, my circle has shifted.",
+      "Weeknight evenings, weekend afternoons. Dutch, English, intermediate Spanish."
+    ]
+  },
+  {
+    "id": "u-h-dn-09",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Diego. Moved from Havana eight months ago — partner is studying here.",
+      "I live in Centrum, very close to the Passage.",
+      "Salsa is everything — I teach a bit informally. Bachata too. Latin music is most of my listening.",
+      "I'd love language exchange — Dutch is hard from Spanish, but I'm trying.",
+      "Weeknight evenings, weekend evenings, Sunday afternoons. Spanish, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-10",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "Elif here. Moved from Istanbul six months ago for an analyst role at a think-tank.",
+      "I'm in Archipelbuurt, in a small apartment with a balcony.",
+      "Tango is my obsession — I dance three or four nights a week. Salsa for fun. Latin music on the way to work.",
+      "Language exchange is something I'd love — to maintain my Turkish and pick up Dutch.",
+      "Weeknight evenings, both weekend days. Turkish, English, beginner Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-11",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Karel. 67, born here, retired mechanical engineer.",
+      "I'm in Scheveningen, on the boulevard, walking the beach every morning.",
+      "Tango is the thing — I started in my forties and never stopped. Salsa I dabble in. Latin music has saturated my house.",
+      "I help with the language-exchange evening at the library and would love more.",
+      "Weekday daytimes, weeknight evenings, weekend afternoons. Dutch, English, German, French, intermediate Spanish."
+    ]
+  },
+  {
+    "id": "u-h-dn-12",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "Hi, I'm Ana. Moved from Iași a year ago for a master's at Leiden, commuting from The Hague.",
+      "I'm in Bezuidenhout, near the train station, sharing with two friends.",
+      "Salsa is my weekly thing, bachata I'm learning, tango I've watched but not danced. Latin music in the flat.",
+      "Language exchange would be perfect — keep my Romanian, get Dutch moving.",
+      "Weeknight evenings, weekend evenings, Sunday afternoons. Romanian, English, basic Dutch."
+    ]
+  },
+  {
+    "id": "u-h-dn-13",
+    "city": "The Hague",
+    "cluster_hint": "dance",
+    "replies": [
+      "I'm Bruno. Moved from Recife seven months ago for a senior analyst role at an NGO.",
+      "I live in Centrum, near the Plein.",
+      "Salsa and samba are home — I miss the heat but the dance scene here is real. Latin music keeps me sane.",
+      "Language exchange for Dutch would be a dream.",
+      "Weeknight evenings, weekend evenings. Portuguese, Spanish, English, beginner Dutch."
+    ]
+  }
+]
