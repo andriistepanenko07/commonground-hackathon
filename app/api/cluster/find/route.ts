@@ -1,6 +1,16 @@
 import { NextResponse } from "next/server";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import {
+  getUserById,
+  allUsers,
+  allClusters,
+  allEvents,
+  setCluster,
+  setEvent,
+  venues,
+  cityEvents,
+} from "@/lib/store";
+import { redis } from "@/lib/redis";
 import { findCluster } from "@/lib/agent2";
 import { propose, proposalToEvent } from "@/lib/agent3";
 
@@ -10,7 +20,19 @@ export async function POST(req: Request) {
   const userId = await getSessionUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
 
-  const seedUser = store.users.get(userId);
+  // Race-protect: a double-click can otherwise create two clusters and burn through the cap.
+  // 5-second TTL self-heals if the handler crashes.
+  const lock = await redis.set(`cg:lock:cluster-find:${userId}`, "1", { nx: true, ex: 5 });
+  if (!lock) {
+    return NextResponse.json({
+      ok: false,
+      cluster: null,
+      busy: true,
+      error: "Hold on — we're still finding your group.",
+    });
+  }
+
+  const seedUser = await getUserById(userId);
   if (!seedUser) return NextResponse.json({ error: "User not found." }, { status: 404 });
   if (!seedUser.profile_complete) {
     return NextResponse.json({ error: "Profile not complete yet." }, { status: 400 });
@@ -22,9 +44,16 @@ export async function POST(req: Request) {
     ? body.preferred_tags.filter((t: unknown): t is string => typeof t === "string")
     : [];
 
+  // Batch hot-path reads. Three Redis round-trips total, run in parallel.
+  const [clustersAll, usersAll, eventsAll] = await Promise.all([
+    allClusters(),
+    allUsers(),
+    allEvents(),
+  ]);
+
   // Multi-cluster: derive the user's active clusters from the store (in_active_cluster boolean
   // is no longer authoritative — see lib/types.ts comment).
-  const myActiveClusters = [...store.clusters.values()].filter(
+  const myActiveClusters = clustersAll.filter(
     (c) => c.member_ids.includes(userId) && c.status !== "dissolved",
   );
 
@@ -39,8 +68,7 @@ export async function POST(req: Request) {
   // Don't re-match anyone the user is already grouped with.
   const excludeUserIds = [...new Set(myActiveClusters.flatMap((c) => c.member_ids))];
 
-  const candidates = [...store.users.values()];
-  const cluster = findCluster(seedUser, candidates, {
+  const cluster = findCluster(seedUser, usersAll, {
     preferredTags,
     excludeUserIds,
   });
@@ -52,18 +80,17 @@ export async function POST(req: Request) {
     });
   }
 
-  store.clusters.set(cluster.id, cluster);
-  // We intentionally don't flip in_active_cluster — it's legacy. Active-cluster membership is
-  // derived from store.clusters now.
+  await setCluster(cluster);
 
   // Immediately run Agent 3 so the user lands in Now → forming → active in one step.
+  const userIndex = new Map(usersAll.map((u) => [u.id, u]));
   const members = cluster.member_ids
-    .map((id) => store.users.get(id))
+    .map((id) => userIndex.get(id))
     .filter((u): u is NonNullable<typeof u> => !!u);
 
   // Dedup: don't propose an activity that's already on the user's plate from another cluster.
   const excludeActivityTitles = new Set(
-    [...store.events.values()]
+    eventsAll
       .filter(
         (e) =>
           e.status !== "cancelled" &&
@@ -76,17 +103,17 @@ export async function POST(req: Request) {
     {
       cluster,
       members,
-      cityEvents: store.cityEvents,
-      venues: store.venues,
+      cityEvents,
+      venues,
     },
     { excludeActivityTitles },
   );
   let event = null;
   if (proposal) {
     event = proposalToEvent(proposal, cluster.id);
-    store.events.set(event.id, event);
+    await setEvent(event);
     cluster.status = "active";
-    store.clusters.set(cluster.id, cluster);
+    await setCluster(cluster);
   }
 
   return NextResponse.json({ ok: true, cluster, event });

@@ -1,7 +1,7 @@
 import { redirect, notFound } from "next/navigation";
 import { HeartHandshake } from "lucide-react";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { getEvent, getCluster, allUsers, allContacts } from "@/lib/store";
 import FollowupPicker from "./FollowupPicker";
 import AgentNotice from "@/components/AgentNotice";
 
@@ -11,21 +11,23 @@ export default async function FollowupPage({ params }: { params: Promise<{ id: s
   const userId = await getSessionUserId();
   if (!userId) redirect("/login");
   const { id } = await params;
-  const event = store.events.get(id);
+  const event = await getEvent(id);
   if (!event) notFound();
-  const cluster = store.clusters.get(event.cluster_id);
+  const cluster = await getCluster(event.cluster_id);
   if (!cluster || !cluster.member_ids.includes(userId)) notFound();
 
+  const [usersAll, contacts] = await Promise.all([allUsers(), allContacts()]);
+  const userIndex = new Map(usersAll.map((u) => [u.id, u]));
   const others = cluster.member_ids
     .filter((mid) => mid !== userId)
-    .map((mid) => store.users.get(mid))
+    .map((mid) => userIndex.get(mid))
     .filter((u): u is NonNullable<typeof u> => !!u);
 
-  const pickedIds = store.contacts
+  const pickedIds = contacts
     .filter((c) => c.from_user_id === userId && c.via_event_id === id)
     .map((c) => c.to_user_id);
   const pickedBackIds = new Set(
-    store.contacts
+    contacts
       .filter((c) => c.to_user_id === userId && c.via_event_id === id)
       .map((c) => c.from_user_id),
   );

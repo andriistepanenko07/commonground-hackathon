@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { getUserById, allUsers, allClusters, allEvents } from "@/lib/store";
 import { toSafeMember } from "@/lib/types";
 import { ClusterPreview } from "@/components/ClusterPreview";
 import FindGroupButton from "@/components/FindGroupButton";
@@ -14,11 +14,17 @@ export const dynamic = "force-dynamic";
 export default async function NowPage() {
   const userId = await getSessionUserId();
   if (!userId) redirect("/login");
-  const user = store.users.get(userId);
+  const [user, clustersAll, usersAll, eventsAll] = await Promise.all([
+    getUserById(userId),
+    allClusters(),
+    allUsers(),
+    allEvents(),
+  ]);
   if (!user) redirect("/login");
   if (!user.profile_complete) redirect("/onboarding/chat");
 
-  const clusters = [...store.clusters.values()].filter(
+  const userIndex = new Map(usersAll.map((u) => [u.id, u]));
+  const clusters = clustersAll.filter(
     (c) => c.member_ids.includes(userId) && c.status !== "dissolved",
   );
 
@@ -66,11 +72,11 @@ export default async function NowPage() {
 
       {clusters.map((cluster) => {
         const memberUsers = cluster.member_ids
-          .map((id) => store.users.get(id))
+          .map((id) => userIndex.get(id))
           .filter((u): u is NonNullable<typeof u> => !!u);
         const members = memberUsers.map(toSafeMember);
 
-        const event = [...store.events.values()].find(
+        const event = eventsAll.find(
           (e) => e.cluster_id === cluster.id && e.status !== "cancelled",
         );
 

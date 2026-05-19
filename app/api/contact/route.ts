@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { allContacts, setContacts } from "@/lib/store";
 import type { Contact } from "@/lib/types";
 
 export async function POST(req: Request) {
@@ -11,12 +11,14 @@ export async function POST(req: Request) {
   const eventId = typeof body.via_event_id === "string" ? body.via_event_id : null;
   if (!toId || !eventId) return NextResponse.json({ error: "to_user_id and via_event_id required" }, { status: 400 });
 
-  const already = store.contacts.find(
+  const contacts = await allContacts();
+
+  const already = contacts.find(
     (c) => c.from_user_id === userId && c.to_user_id === toId && c.via_event_id === eventId,
   );
   if (already) return NextResponse.json({ ok: true, contact: already });
 
-  const isFirstPickByMeOnEvent = !store.contacts.some(
+  const isFirstPickByMeOnEvent = !contacts.some(
     (c) => c.from_user_id === userId && c.via_event_id === eventId,
   );
 
@@ -26,7 +28,7 @@ export async function POST(req: Request) {
     to_user_id: toId,
     via_event_id: eventId,
   };
-  store.contacts.push(contact);
+  const next = [...contacts, contact];
 
   // Demo: one seeded cluster-mate auto-picks the user back, so the reciprocal
   // "you both said yes" state is visible on stage. Fires only for the user's
@@ -34,7 +36,7 @@ export async function POST(req: Request) {
   // "waiting on them" state.
   let reciprocal: Contact | null = null;
   if (isFirstPickByMeOnEvent) {
-    const alreadyReciprocal = store.contacts.find(
+    const alreadyReciprocal = contacts.find(
       (c) => c.from_user_id === toId && c.to_user_id === userId && c.via_event_id === eventId,
     );
     if (!alreadyReciprocal) {
@@ -44,9 +46,10 @@ export async function POST(req: Request) {
         to_user_id: userId,
         via_event_id: eventId,
       };
-      store.contacts.push(reciprocal);
+      next.push(reciprocal);
     }
   }
 
+  await setContacts(next);
   return NextResponse.json({ ok: true, contact, reciprocal });
 }

@@ -10,11 +10,11 @@ export async function POST(req: Request) {
   if (!email || !password) {
     return NextResponse.json({ error: "Email and password required." }, { status: 400 });
   }
-  if (findUserByEmail(email)) {
+  if (await findUserByEmail(email)) {
     return NextResponse.json({ error: "That email is already in use — try logging in." }, { status: 409 });
   }
 
-  const user = createNewUser(email, password);
+  const user = await createNewUser(email, password);
   await setSession(user.id);
   return NextResponse.json({ ok: true, redirect: "/onboarding/chat" });
 }

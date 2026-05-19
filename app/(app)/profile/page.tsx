@@ -11,7 +11,7 @@ import {
   Pencil,
 } from "lucide-react";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { getUserById } from "@/lib/store";
 import ProfileActions from "@/components/ProfileActions";
 import type { DayPart } from "@/lib/types";
 
@@ -29,7 +29,7 @@ export const dynamic = "force-dynamic";
 export default async function ProfilePage() {
   const userId = await getSessionUserId();
   if (!userId) redirect("/login");
-  const user = store.users.get(userId);
+  const user = await getUserById(userId);
   if (!user) redirect("/login");
 
   return (

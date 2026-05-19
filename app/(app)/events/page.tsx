@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import { getSessionUserId } from "@/lib/session";
-import { store } from "@/lib/store";
+import { getUserById, allClusters, allEvents } from "@/lib/store";
 import EventCard from "@/components/EventCard";
 import AgentNotice from "@/components/AgentNotice";
 import FindAnotherGroupCard from "@/components/FindAnotherGroupCard";
@@ -12,14 +12,18 @@ export const dynamic = "force-dynamic";
 export default async function EventsPage() {
   const userId = await getSessionUserId();
   if (!userId) redirect("/login");
-  const user = store.users.get(userId);
+  const [user, clustersAll, eventsAll] = await Promise.all([
+    getUserById(userId),
+    allClusters(),
+    allEvents(),
+  ]);
   if (!user) redirect("/login");
   if (!user.profile_complete) redirect("/onboarding/chat");
 
   // Find every event tied to a cluster this user belongs to.
-  const myClusters = [...store.clusters.values()].filter((c) => c.member_ids.includes(userId));
+  const myClusters = clustersAll.filter((c) => c.member_ids.includes(userId));
   const myClusterIds = new Set(myClusters.map((c) => c.id));
-  const myEvents = [...store.events.values()].filter((e) => myClusterIds.has(e.cluster_id));
+  const myEvents = eventsAll.filter((e) => myClusterIds.has(e.cluster_id));
   const activeClusterCount = myClusters.filter((c) => c.status !== "dissolved").length;
 
   const toConfirm = myEvents.filter((e) => e.status === "proposed");
